@@ -1,0 +1,55 @@
+[tool.poetry]
+name = "ons-mortality-counterfactual"
+version = "0.1.0"
+description = "Download ONS monthly mortality data into MySQL and build a Bayesian counterfactual chart."
+authors = ["Diogo Ribeiro"]
+readme = "README.md"
+packages = [{ include = "ons_mortality", from = "src" }]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.14"
+beautifulsoup4 = "^4.12.3"
+cryptography = "^42.0.0"
+matplotlib = "^3.8.0"
+numpy = "^1.26.0"
+openpyxl = "^3.1.5"
+pandas = "^2.2.0"
+pymysql = "^1.1.1"
+python-dotenv = "^1.0.1"
+requests = "^2.32.0"
+sqlalchemy = "^2.0.30"
+xlrd = "^2.0.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.0"
+ruff = "^0.5.0"
+mypy = "^1.10.0"
+pandas-stubs = "^2.2.2.240603"
+types-requests = "^2.32.0.20240712"
+
+[tool.poetry.scripts]
+ons-mortality = "ons_mortality.cli:main"
+
+[build-system]
+requires = ["poetry-core>=1.9.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests", "scripts"]
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "N", "ANN", "SIM", "C4"]
+ignore = ["ANN101", "ANN102"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_unreachable = true
+warn_unused_ignores = true
+plugins = []
+
+[[tool.mypy.overrides]]
+module = ["bs4.*", "matplotlib.*", "xlrd.*", "openpyxl.*"]
+ignore_missing_imports = true
