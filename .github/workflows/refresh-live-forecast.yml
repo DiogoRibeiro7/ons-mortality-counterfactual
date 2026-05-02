@@ -59,6 +59,10 @@ jobs:
             --inplace \
             notebooks/07_live_forecast.ipynb
 
+      - name: Re-render the README figures
+        run: |
+          python scripts/render_readme_figures.py
+
       - name: Commit refreshed artefacts
         run: |
           git config --local user.name "github-actions[bot]"

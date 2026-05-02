@@ -132,6 +132,8 @@ Cumulative excess (2020-2024): **~245 000**.
 
 Refits the same model independently for the 9 English regions plus Wales, and ranks them by per-capita pandemic excess. The absolute and per-capita rankings disagree sharply: London tops the absolute table but is near the bottom per capita, while the North West tops the per-capita table at 5.48 excess deaths per 1 000.
 
+![Per-capita pandemic excess by region](figures/regional_per_capita_excess.png)
+
 Run `ons-mortality fetch-regional` first to build the input CSV.
 
 **[`03_negative_binomial_glm.ipynb`](notebooks/03_negative_binomial_glm.ipynb)** — count model with population offset.
@@ -152,9 +154,13 @@ Run `ons-mortality fetch-weekly` first to build the input CSV.
 
 Decomposes the year-by-year excess into direct COVID-19 deaths and non-COVID residual. Two distinct regimes: in **2020–2021 COVID-19 over-explains the excess** (lockdowns suppressed flu, road accidents, and other typical killers, so non-COVID mortality fell). In **2022 the split is roughly 80/20**. By **2023–2024 COVID-19 explains only ~30%** of excess; the residual ~20 000 deaths/year is attributable elsewhere (delayed treatment, NHS pressure, post-acute pandemic effects). Cumulative split: ~204k COVID-19 + ~42k non-COVID = ~246k total.
 
+![Annual excess deaths: COVID-19 vs non-COVID component](figures/covid_vs_non_covid_excess.png)
+
 **[`07_live_forecast.ipynb`](notebooks/07_live_forecast.ipynb)** — forward projection.
 
 Two projections share one design matrix: the **counterfactual** trained on pre-2020 data only, and the **forecast** trained on all observed months. Both project 24 months past the latest ONS edition. The gap between them implies a **structural \"new normal\" elevation of ~35–40 thousand deaths per year** through 2026 — close to the recent post-pandemic excess running rate. Includes an "is the latest month inside the forecast 94% interval?" check that's the natural anchor for monitoring fresh ONS publications.
+
+![Live forecast and counterfactual](figures/live_forecast.png)
 
 ## Continuous refresh
 
