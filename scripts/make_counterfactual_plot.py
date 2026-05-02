@@ -1,4 +1,11 @@
-"""Generate the England and Wales mortality counterfactual chart."""
+"""Generate the England and Wales mortality counterfactual chart.
+
+Kept for backwards compatibility with the README. Prefer:
+
+    poetry run ons-mortality plot
+
+which exposes the same flags as a proper CLI subcommand.
+"""
 
 from __future__ import annotations
 
@@ -6,8 +13,15 @@ from pathlib import Path
 
 import pandas as pd
 
-from ons_mortality.counterfactual import CounterfactualConfig, fit_counterfactual, plot_counterfactual
-from ons_mortality.database import create_mysql_engine, read_national_monthly_deaths
+from ons_mortality.counterfactual import (
+    CounterfactualConfig,
+    fit_counterfactual,
+    plot_counterfactual,
+)
+from ons_mortality.database import (
+    create_mysql_engine,
+    read_national_monthly_deaths,
+)
 
 INPUT_CSV = Path("data/processed/england_wales_monthly_deaths.csv")
 OUTPUT_PNG = Path("figures/england_wales_counterfactual.png")

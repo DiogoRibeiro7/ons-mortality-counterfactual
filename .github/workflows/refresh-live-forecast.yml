@@ -1,0 +1,79 @@
+name: Refresh live forecast
+
+# Re-fetches the latest ONS monthly mortality data and re-executes notebooks
+# 01 (headline counterfactual) and 07 (live forecast) so the rendered
+# figures and tables stay current. ONS publishes a new monthly edition
+# mid-month; the schedule fires at 02:00 UTC on the 25th to give the
+# upload pipeline time to settle.
+
+on:
+  schedule:
+    - cron: "0 2 25 * *"
+  workflow_dispatch:
+    # Manual trigger for testing or one-off refreshes.
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install jupyter nbconvert ipykernel
+          pip install -e .
+
+      - name: Fetch latest ONS monthly mortality data
+        run: |
+          ons-mortality fetch \
+            --start-year 2006 \
+            --end-year $(date +%Y)
+
+      - name: Re-execute notebook 01 (counterfactual mortality)
+        run: |
+          jupyter nbconvert \
+            --to notebook \
+            --execute \
+            --inplace \
+            notebooks/01_counterfactual_mortality.ipynb
+
+      - name: Re-execute notebook 07 (live forecast)
+        run: |
+          jupyter nbconvert \
+            --to notebook \
+            --execute \
+            --inplace \
+            notebooks/07_live_forecast.ipynb
+
+      - name: Commit refreshed artefacts
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add \
+            data/processed/england_wales_monthly_deaths.csv \
+            figures/ \
+            notebooks/01_counterfactual_mortality.ipynb \
+            notebooks/07_live_forecast.ipynb
+
+          if git diff --staged --quiet; then
+            echo "No changes from this refresh."
+            exit 0
+          fi
+
+          git commit -m "Refresh live forecast (auto, $(date -u +%Y-%m-%d))"
+          git push

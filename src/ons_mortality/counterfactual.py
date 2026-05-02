@@ -189,6 +189,7 @@ def plot_counterfactual(
     output_path: Path | None = None,
     title_prefix: str = "England & Wales monthly mortality",
     config: CounterfactualConfig | None = None,
+    observed_label: str = "observed monthly deaths (England & Wales)",
 ) -> None:
     """
     Plot observed deaths against the estimated no-pandemic counterfactual.
@@ -203,6 +204,8 @@ def plot_counterfactual(
         First line of the chart title.
     config:
         Model configuration used for the pandemic onset date.
+    observed_label:
+        Legend label used for the observed-deaths line.
     """
     cfg = config or CounterfactualConfig()
     required = {
@@ -228,12 +231,13 @@ def plot_counterfactual(
     import matplotlib.pyplot as plt
     fig, ax = plt.subplots(figsize=(14, 7))
 
+    interval_pct = int(round(cfg.interval_mass * 100))
     ax.fill_between(
         plot_df["month_date"],
         plot_df["counterfactual_lower"],
         plot_df["counterfactual_upper"],
         alpha=0.25,
-        label="counterfactual 94% interval  (no pandemic)",
+        label=f"counterfactual {interval_pct}% interval  (no pandemic)",
     )
 
     ax.plot(
@@ -248,7 +252,7 @@ def plot_counterfactual(
         plot_df["observed_deaths"],
         color="black",
         linewidth=2.0,
-        label="observed monthly deaths (England & Wales)",
+        label=observed_label,
     )
 
     ax.fill_between(

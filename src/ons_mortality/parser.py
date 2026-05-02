@@ -3,8 +3,8 @@
 from __future__ import annotations
 
 import re
+from collections.abc import Iterable
 from pathlib import Path
-from typing import Iterable
 
 import pandas as pd
 
@@ -255,7 +255,11 @@ def normalise_ons_sheet(
     if data.empty:
         return pd.DataFrame()
 
-    month_columns = [column for column in data.columns if month_number_from_header(column) is not None]
+    month_columns = [
+        column
+        for column in data.columns
+        if month_number_from_header(column) is not None
+    ]
     if len(month_columns) < 3:
         return pd.DataFrame()
 

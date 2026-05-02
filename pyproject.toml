@@ -18,6 +18,7 @@ pymysql = "^1.1.1"
 python-dotenv = "^1.0.1"
 requests = "^2.32.0"
 sqlalchemy = "^2.0.30"
+statsmodels = "^0.14"
 xlrd = "^2.0.1"
 
 [tool.poetry.group.dev.dependencies]
@@ -34,6 +35,10 @@ ons-mortality = "ons_mortality.cli:main"
 requires = ["poetry-core>=1.9.0"]
 build-backend = "poetry.core.masonry.api"
 
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
 [tool.ruff]
 line-length = 100
 src = ["src", "tests", "scripts"]
@@ -41,7 +46,14 @@ target-version = "py310"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP", "N", "ANN", "SIM", "C4"]
-ignore = ["ANN101", "ANN102"]
+
+[tool.ruff.lint.per-file-ignores]
+# `X_train` / `X_all` are the conventional names for design matrices.
+"src/ons_mortality/counterfactual.py" = ["N806"]
+# Notebooks are exploratory: late imports for display libs are common,
+# the cell-by-cell import block ordering is the editor's call, and
+# the `X_train` / `X_all` design-matrix convention is preserved.
+"notebooks/*.ipynb" = ["I001", "E501", "E402", "F401", "N806"]
 
 [tool.mypy]
 python_version = "3.10"
