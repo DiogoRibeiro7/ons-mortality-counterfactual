@@ -22,7 +22,9 @@ from ons_mortality.database import (
 from ons_mortality.fetch import (
     fetch_national_monthly_deaths,
     fetch_regional_monthly_deaths,
+    fetch_weekly_age_deaths,
     fetch_weekly_national_deaths,
+    fetch_weekly_sex_age_deaths,
 )
 from ons_mortality.ons import (
     discover_ons_files,
@@ -165,6 +167,52 @@ def handle_fetch_weekly(args: argparse.Namespace) -> None:
 
     span = f"{df['week_ending'].min():%Y-%m-%d} -> {df['week_ending'].max():%Y-%m-%d}"
     print(f"Wrote {len(df):,} weekly rows ({span}) to {csv_path}")
+
+
+def handle_fetch_weekly_ages(args: argparse.Namespace) -> None:
+    """Download ONS weekly workbooks and write the E&W per-age-band series."""
+    paths = load_path_config()
+    raw_dir = Path(args.raw_dir) if args.raw_dir else paths.raw_dir / "weekly"
+    csv_path = Path(args.output)
+    csv_path.parent.mkdir(parents=True, exist_ok=True)
+
+    df = fetch_weekly_age_deaths(
+        raw_dir=raw_dir,
+        start_year=args.start_year,
+        end_year=args.end_year,
+        overwrite=args.overwrite,
+    )
+    df.to_csv(csv_path, index=False)
+
+    span = f"{df['week_ending'].min():%Y-%m-%d} -> {df['week_ending'].max():%Y-%m-%d}"
+    n_bands = df['age_band'].nunique()
+    print(
+        f"Wrote {len(df):,} rows across {n_bands} age bands ({span}) to {csv_path}"
+    )
+
+
+def handle_fetch_weekly_sex_ages(args: argparse.Namespace) -> None:
+    """Download ONS weekly workbooks and write the per-(sex × age) series."""
+    paths = load_path_config()
+    raw_dir = Path(args.raw_dir) if args.raw_dir else paths.raw_dir / "weekly"
+    csv_path = Path(args.output)
+    csv_path.parent.mkdir(parents=True, exist_ok=True)
+
+    df = fetch_weekly_sex_age_deaths(
+        raw_dir=raw_dir,
+        start_year=args.start_year,
+        end_year=args.end_year,
+        overwrite=args.overwrite,
+    )
+    df.to_csv(csv_path, index=False)
+
+    span = f"{df['week_ending'].min():%Y-%m-%d} -> {df['week_ending'].max():%Y-%m-%d}"
+    n_bands = df['age_band'].nunique()
+    n_sex = df['sex'].nunique()
+    print(
+        f"Wrote {len(df):,} rows across {n_sex} sex × {n_bands} age bands "
+        f"({span}) to {csv_path}"
+    )
 
 
 def handle_fetch_regional(args: argparse.Namespace) -> None:
@@ -364,6 +412,70 @@ def build_parser() -> argparse.ArgumentParser:
         help="Force re-download even when cached.",
     )
     fetch_weekly_parser.set_defaults(func=handle_fetch_weekly)
+
+    fetch_ages_parser = subparsers.add_parser(
+        "fetch-weekly-ages",
+        help=(
+            "Download ONS weekly workbooks and write E&W per-age-band weekly "
+            "deaths to CSV (seven canonical bands)."
+        ),
+    )
+    fetch_ages_parser.add_argument(
+        "--start-year", type=int, default=2010,
+        help="First weekly edition year (default: 2010).",
+    )
+    fetch_ages_parser.add_argument(
+        "--end-year", type=int, default=2024,
+        help="Last weekly edition year (default: 2024).",
+    )
+    fetch_ages_parser.add_argument(
+        "--output",
+        default="data/processed/england_wales_weekly_age_deaths.csv",
+        help="Output CSV path.",
+    )
+    fetch_ages_parser.add_argument(
+        "--raw-dir",
+        default=None,
+        help="Override the raw download cache directory (defaults to data/raw/weekly).",
+    )
+    fetch_ages_parser.add_argument(
+        "--overwrite",
+        action="store_true",
+        help="Force re-download even when cached.",
+    )
+    fetch_ages_parser.set_defaults(func=handle_fetch_weekly_ages)
+
+    fetch_sex_ages_parser = subparsers.add_parser(
+        "fetch-weekly-sex-ages",
+        help=(
+            "Download ONS weekly workbooks and write E&W per-(sex × age) "
+            "weekly deaths to CSV (3 sex × 7 canonical age bands)."
+        ),
+    )
+    fetch_sex_ages_parser.add_argument(
+        "--start-year", type=int, default=2010,
+        help="First weekly edition year (default: 2010).",
+    )
+    fetch_sex_ages_parser.add_argument(
+        "--end-year", type=int, default=2024,
+        help="Last weekly edition year (default: 2024).",
+    )
+    fetch_sex_ages_parser.add_argument(
+        "--output",
+        default="data/processed/england_wales_weekly_sex_age_deaths.csv",
+        help="Output CSV path.",
+    )
+    fetch_sex_ages_parser.add_argument(
+        "--raw-dir",
+        default=None,
+        help="Override the raw download cache directory (defaults to data/raw/weekly).",
+    )
+    fetch_sex_ages_parser.add_argument(
+        "--overwrite",
+        action="store_true",
+        help="Force re-download even when cached.",
+    )
+    fetch_sex_ages_parser.set_defaults(func=handle_fetch_weekly_sex_ages)
 
     run_parser = subparsers.add_parser(
         "run",

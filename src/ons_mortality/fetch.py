@@ -926,3 +926,925 @@ def fetch_weekly_national_deaths(
     ].sort_values("week_ending").reset_index(drop=True)
 
     return output
+
+
+# ---------------------------------------------------------------------------
+# Weekly mortality by age band
+# ---------------------------------------------------------------------------
+
+# Seven canonical age bands. Chosen to match the coarse 2010-2019 ONS layout
+# so older editions don't lose any signal under aggregation; fine 5-year
+# bands from 2020+ collapse into these seven.
+AGE_BAND_ORDER = (
+    "Under 1",
+    "1-14",
+    "15-44",
+    "45-64",
+    "65-74",
+    "75-84",
+    "85+",
+)
+
+# Maps every age-label spelling we've seen across the 2010-2024 weekly
+# editions to the canonical band. Lower-cased; whitespace-stripped at lookup.
+_AGE_BAND_ALIASES: dict[str, str] = {
+    # Under 1
+    "<1": "Under 1",
+    "under 1": "Under 1",
+    "under 1 year": "Under 1",
+    # 1-14
+    "01-14": "1-14",
+    "1-14": "1-14",
+    "01-04": "1-14",
+    "1-4": "1-14",
+    "1 to 4": "1-14",
+    "05-09": "1-14",
+    "5-9": "1-14",
+    "5 to 9": "1-14",
+    "10-14": "1-14",
+    "10 to 14": "1-14",
+    # 15-44
+    "15-44": "15-44",
+    "15-19": "15-44",
+    "15 to 19": "15-44",
+    "20-24": "15-44",
+    "20 to 24": "15-44",
+    "25-29": "15-44",
+    "25 to 29": "15-44",
+    "30-34": "15-44",
+    "30 to 34": "15-44",
+    "35-39": "15-44",
+    "35 to 39": "15-44",
+    "40-44": "15-44",
+    "40 to 44": "15-44",
+    # 45-64
+    "45-64": "45-64",
+    "45-49": "45-64",
+    "45 to 49": "45-64",
+    "50-54": "45-64",
+    "50 to 54": "45-64",
+    "55-59": "45-64",
+    "55 to 59": "45-64",
+    "60-64": "45-64",
+    "60 to 64": "45-64",
+    # 65-74
+    "65-74": "65-74",
+    "65-69": "65-74",
+    "65 to 69": "65-74",
+    "70-74": "65-74",
+    "70 to 74": "65-74",
+    # 75-84
+    "75-84": "75-84",
+    "75-79": "75-84",
+    "75 to 79": "75-84",
+    "80-84": "75-84",
+    "80 to 84": "75-84",
+    # 85+
+    "85+": "85+",
+    "85-89": "85+",
+    "85 to 89": "85+",
+    "90+": "85+",
+    "90 and over": "85+",
+}
+
+
+def _canonical_age_band(label: object) -> str | None:
+    """Map a raw age-band label to one of the seven canonical bands."""
+    if not isinstance(label, str):
+        return None
+    key = label.strip().lower()
+    return _AGE_BAND_ALIASES.get(key)
+
+
+def _is_persons_header(value: object) -> bool:
+    """Return True for the 'Persons'/'People' totals header (any footnote suffix)."""
+    if not isinstance(value, str):
+        return False
+    text = value.strip().lower()
+    if not text:
+        return False
+    head = text.split()[0]
+    return head in {"persons", "people"}
+
+
+def _is_sex_split_header(value: object) -> bool:
+    """Return True for the 'Males'/'Females' headers that end the persons block."""
+    if not isinstance(value, str):
+        return False
+    head = value.strip().lower().split()
+    return bool(head) and head[0] in {"males", "females"}
+
+
+def _extract_weekly_ages_block_format(
+    sheet_df: pd.DataFrame,
+    edition_year: int,
+) -> list[tuple[pd.Timestamp, str, int]]:
+    """
+    Pull (week_ending, age_band, deaths) tuples from the 2010-2021 block layout.
+
+    Layout: a "Week ended" row in column A carries the week-ending dates
+    across columns; a "Persons"/"People" header introduces the all-sex age
+    block, followed by a "Deaths by age group" row and one row per band.
+    The persons block lived in column A through 2018 and moved to column B
+    in 2019; bands were coarse (7 labels) until 2019 and fine 5-year (19
+    labels) from 2020. We detect the column from the persons header and
+    sum any number of fine bands into the seven canonical bands; iteration
+    stops at the first "Males"/"Females" header (start of the next block).
+    """
+    df = sheet_df.dropna(how="all").dropna(axis=1, how="all").reset_index(drop=True)
+    if df.empty:
+        return []
+
+    week_end_row_idx: int | None = None
+    persons_row_idx: int | None = None
+    label_col: int = 0
+
+    for idx in range(len(df)):
+        first = df.iloc[idx, 0]
+        if (
+            week_end_row_idx is None
+            and isinstance(first, str)
+            and first.strip().lower() == "week ended"
+        ):
+            week_end_row_idx = idx
+        if persons_row_idx is None:
+            if _is_persons_header(first):
+                persons_row_idx = idx
+                label_col = 0
+            elif df.shape[1] > 1 and _is_persons_header(df.iloc[idx, 1]):
+                persons_row_idx = idx
+                label_col = 1
+
+    if week_end_row_idx is None or persons_row_idx is None:
+        return []
+
+    week_end_row = df.iloc[week_end_row_idx]
+    week_ends: list[tuple[int, pd.Timestamp]] = []
+    for column_idx in range(len(week_end_row)):
+        date_value = week_end_row.iloc[column_idx]
+        if pd.isna(date_value):
+            continue
+        try:
+            week_end = pd.Timestamp(date_value)
+        except (ValueError, TypeError):
+            continue
+        if pd.isna(week_end):
+            continue
+        week_ends.append((column_idx, week_end))
+
+    if not week_ends:
+        return []
+
+    band_totals: dict[tuple[pd.Timestamp, str], int] = {}
+
+    for idx in range(persons_row_idx + 1, len(df)):
+        row = df.iloc[idx]
+        label = row.iloc[label_col]
+        if _is_sex_split_header(label):
+            break
+        band = _canonical_age_band(label)
+        if band is None:
+            continue
+        for column_idx, week_end in week_ends:
+            value = row.iloc[column_idx]
+            deaths = pd.to_numeric(value, errors="coerce")
+            if pd.isna(deaths):
+                continue
+            key = (week_end, band)
+            band_totals[key] = band_totals.get(key, 0) + int(round(float(deaths)))
+
+    return [(week_end, band, total) for (week_end, band), total in band_totals.items()]
+
+
+def _extract_weekly_ages_fine_cols(
+    sheet_df: pd.DataFrame,
+    edition_year: int,
+) -> list[tuple[pd.Timestamp, str, int]]:
+    """
+    Pull (week_ending, age_band, deaths) tuples from the 2022 hybrid layout.
+
+    The persons block on sheet "2" has a clean header row whose columns are
+    age bands: ``Week number``, ``Week ending``, ``All ages``, ``<1``,
+    ``01-04``, ..., ``90+``. One row per week. The same sheet stacks
+    Persons / Males / Females tables vertically, so we stop at the second
+    occurrence of any week-ending date (start of the Males block) and sum
+    the fine bands into the seven canonical bands.
+    """
+    df = sheet_df.dropna(how="all").dropna(axis=1, how="all")
+    if df.empty:
+        return []
+
+    header_index: int | None = None
+    for idx, row in df.iterrows():
+        normalized = [str(v).strip().lower() for v in row.tolist()]
+        if (
+            "week ending" in normalized
+            and any(_canonical_age_band(v) for v in row.tolist())
+        ):
+            header_index = int(idx)
+            break
+
+    if header_index is None:
+        return []
+
+    headers = [str(v).strip() for v in df.loc[header_index].tolist()]
+    week_end_col_idx: int | None = None
+    age_columns: list[tuple[int, str]] = []
+    for column_idx, header in enumerate(headers):
+        if header.lower() == "week ending":
+            week_end_col_idx = column_idx
+            continue
+        band = _canonical_age_band(header)
+        if band is not None:
+            age_columns.append((column_idx, band))
+
+    if week_end_col_idx is None or not age_columns:
+        return []
+
+    band_totals: dict[tuple[pd.Timestamp, str], int] = {}
+    seen_weeks: set[pd.Timestamp] = set()
+
+    for _, row in df.loc[header_index + 1:].iterrows():
+        date_value = row.iloc[week_end_col_idx]
+        if pd.isna(date_value):
+            continue
+        try:
+            week_end = pd.Timestamp(date_value)
+        except (ValueError, TypeError):
+            continue
+        if pd.isna(week_end):
+            continue
+        # The next table (Males) repeats the same dates; stop before it.
+        if week_end in seen_weeks:
+            break
+        seen_weeks.add(week_end)
+        for column_idx, band in age_columns:
+            value = row.iloc[column_idx]
+            deaths = pd.to_numeric(value, errors="coerce")
+            if pd.isna(deaths):
+                continue
+            key = (week_end, band)
+            band_totals[key] = band_totals.get(key, 0) + int(round(float(deaths)))
+
+    return [(week_end, band, total) for (week_end, band), total in band_totals.items()]
+
+
+def _extract_weekly_ages_long(
+    sheet_df: pd.DataFrame,
+    edition_year: int,
+) -> list[tuple[pd.Timestamp, str, int]]:
+    """
+    Pull (week_ending, age_band, deaths) tuples from the 2023+ long format.
+
+    Each row is one (week, area, sex, age, IMD, place) cell. We filter to
+    the all-residents E&W area, all sexes, all IMD groups, all places, and
+    keep only age bands (excluding "All ages"). Fine 5-year bands collapse
+    into the seven canonical bands.
+    """
+    df = sheet_df.dropna(how="all").dropna(axis=1, how="all")
+    if df.empty:
+        return []
+
+    header_index: int | None = None
+    for idx, row in df.iterrows():
+        normalized = [str(v).strip().lower() for v in row.tolist()]
+        if (
+            "week number" in normalized
+            and any("week ending" in v or "week ended" in v for v in normalized)
+            and any("number of deaths" in v for v in normalized)
+            and any(v.startswith("age group") for v in normalized)
+        ):
+            header_index = int(idx)
+            break
+
+    if header_index is None:
+        return []
+
+    headers = [str(v).strip() for v in df.loc[header_index].tolist()]
+    body = df.loc[header_index + 1:].copy()
+    body.columns = headers
+    body = body.dropna(how="all")
+    if body.empty:
+        return []
+
+    body.columns = [str(c).strip() for c in body.columns]
+    name_lookup = {c.lower(): c for c in body.columns}
+
+    week_end_col = next(
+        (c for k, c in name_lookup.items() if "week ending" in k or "week ended" in k),
+        None,
+    )
+    deaths_col = next(
+        (c for k, c in name_lookup.items() if "number of deaths" in k),
+        None,
+    )
+    age_col = next(
+        (c for k, c in name_lookup.items() if k.startswith("age group")),
+        None,
+    )
+    area_col = name_lookup.get("area of usual residence") or name_lookup.get("area")
+    sex_col = name_lookup.get("sex")
+    imd_col = next((c for k, c in name_lookup.items() if "imd" in k), None)
+    place_col = next(
+        (c for k, c in name_lookup.items() if "place of occurrence" in k),
+        None,
+    )
+
+    if week_end_col is None or deaths_col is None or age_col is None or area_col is None:
+        return []
+
+    ew_aliases = {
+        "england, wales and non-residents",
+        "england and wales",
+        "england & wales",
+    }
+    mask = body[area_col].astype(str).str.strip().str.lower().isin(ew_aliases)
+    if sex_col is not None:
+        mask &= body[sex_col].astype(str).str.strip().str.lower() == "all people"
+    if imd_col is not None:
+        mask &= body[imd_col].astype(str).str.strip().str.lower() == "all groups"
+    if place_col is not None:
+        mask &= body[place_col].astype(str).str.strip().str.lower() == "all places"
+    # Drop the "All ages" total — we want the per-band breakdown.
+    mask &= body[age_col].astype(str).str.strip().str.lower() != "all ages"
+
+    selected = body.loc[mask, [week_end_col, age_col, deaths_col]].copy()
+    if selected.empty:
+        return []
+
+    selected[deaths_col] = pd.to_numeric(selected[deaths_col], errors="coerce")
+    selected = selected.dropna(subset=[deaths_col])
+    selected["__band__"] = selected[age_col].map(_canonical_age_band)
+    selected = selected.dropna(subset=["__band__"])
+
+    band_totals: dict[tuple[pd.Timestamp, str], int] = {}
+    for _, row in selected.iterrows():
+        try:
+            week_end = pd.Timestamp(row[week_end_col])
+        except (ValueError, TypeError):
+            continue
+        if pd.isna(week_end):
+            continue
+        band = str(row["__band__"])
+        key = (week_end, band)
+        band_totals[key] = band_totals.get(key, 0) + int(round(float(row[deaths_col])))
+
+    return [(week_end, band, total) for (week_end, band), total in band_totals.items()]
+
+
+def extract_weekly_age_deaths(path: Path, edition_year: int) -> pd.DataFrame:
+    """Return the E&W weekly per-age-band series for one workbook."""
+    rows: list[tuple[pd.Timestamp, str, int]] = []
+    for _, sheet_df in read_workbook_sheets(path):
+        rows = _extract_weekly_ages_block_format(sheet_df, edition_year)
+        if rows:
+            break
+        rows = _extract_weekly_ages_fine_cols(sheet_df, edition_year)
+        if rows:
+            break
+        rows = _extract_weekly_ages_long(sheet_df, edition_year)
+        if rows:
+            break
+
+    if not rows:
+        return pd.DataFrame(
+            columns=["week_ending", "age_band", "observed_deaths"]
+        )
+
+    df = pd.DataFrame(rows, columns=["week_ending", "age_band", "observed_deaths"])
+    return (
+        df.groupby(["week_ending", "age_band"], as_index=False)["observed_deaths"]
+        .sum()
+        .sort_values(["week_ending", "age_band"])
+        .reset_index(drop=True)
+    )
+
+
+def fetch_weekly_age_deaths(
+    raw_dir: Path,
+    start_year: int = 2010,
+    end_year: int | None = None,
+    overwrite: bool = False,
+    files: list[ONSFile] | None = None,
+) -> pd.DataFrame:
+    """
+    Download every ONS weekly workbook in range and return per-age-band rows.
+
+    Result is a long DataFrame with one row per (week, age_band) using the
+    seven canonical bands. Provenance columns are kept; deduplication
+    prefers final over provisional editions and the most recent edition
+    year on ties.
+    """
+    if files is None:
+        files = discover_ons_files(
+            start_year=start_year,
+            end_year=end_year,
+            dataset_url=ONS_WEEKLY_DATASET_URL,
+        )
+    if not files:
+        raise RuntimeError(
+            "No ONS weekly workbooks were discovered for the requested range."
+        )
+
+    raw_dir.mkdir(parents=True, exist_ok=True)
+
+    frames: list[pd.DataFrame] = []
+    for ons_file, local_path in iter_downloaded_files(
+        files,
+        output_dir=raw_dir,
+        overwrite=overwrite,
+    ):
+        ages = extract_weekly_age_deaths(
+            path=local_path,
+            edition_year=ons_file.edition_year,
+        )
+        if ages.empty:
+            continue
+
+        ages = ages.assign(
+            edition_year=ons_file.edition_year,
+            is_final=ons_file.is_final,
+            source_filename=local_path.name,
+        )
+        frames.append(ages)
+
+    if not frames:
+        raise RuntimeError(
+            "Workbooks were downloaded but no per-age-band rows were extracted. "
+            "The ONS weekly sheet layout may have changed."
+        )
+
+    combined = pd.concat(frames, ignore_index=True)
+    combined["week_ending"] = pd.to_datetime(combined["week_ending"])
+    combined["observed_deaths"] = (
+        pd.to_numeric(combined["observed_deaths"], errors="raise").astype(int)
+    )
+
+    combined["_is_final_int"] = combined["is_final"].astype(int)
+    combined = combined.sort_values(
+        ["age_band", "week_ending", "_is_final_int", "edition_year"],
+        ascending=[True, True, False, False],
+    ).drop_duplicates(subset=["age_band", "week_ending"], keep="first")
+
+    output = combined[
+        [
+            "week_ending",
+            "age_band",
+            "observed_deaths",
+            "edition_year",
+            "is_final",
+            "source_filename",
+        ]
+    ].sort_values(["age_band", "week_ending"]).reset_index(drop=True)
+
+    return output
+
+
+# ---------------------------------------------------------------------------
+# Weekly mortality by sex × age band
+# ---------------------------------------------------------------------------
+
+# Canonical sex labels — match the 2024+ ONS long-format spelling.
+SEX_ORDER = ("All people", "Male", "Female")
+
+
+def _classify_sex_header(value: object) -> str | None:
+    """Map a sex-block header label to its canonical sex.
+
+    The 2010-2021 block headers say "Persons 4" / "Males 6" / "Females 5"
+    (with a footnote suffix); the 2022-2023 sheet "2" titles say "Table 2a:
+    ... people" / "Table 2b: ... males" / "Table 2c: ... females". We pick
+    the first matching keyword regardless of position in the string.
+    """
+    if not isinstance(value, str):
+        return None
+    text = value.strip().lower()
+    if not text:
+        return None
+    # "females" before "males" because "males" is a substring of "females".
+    if "females" in text or "female" in text:
+        return "Female"
+    if "males" in text or "male" in text:
+        return "Male"
+    if "persons" in text or "people" in text:
+        return "All people"
+    return None
+
+
+def _extract_weekly_sex_ages_block_format(
+    sheet_df: pd.DataFrame,
+    edition_year: int,
+) -> list[tuple[pd.Timestamp, str, str, int]]:
+    """
+    Pull (week_ending, sex, age_band, deaths) tuples from the 2010-2021 layout.
+
+    Same shape as :func:`_extract_weekly_ages_block_format`, but extracts
+    all three sex blocks (Persons → "All people", Males → "Male", Females
+    → "Female") rather than only the persons total. Each block runs from
+    its sex header until the next sex header (or end of sheet).
+    """
+    df = sheet_df.dropna(how="all").dropna(axis=1, how="all").reset_index(drop=True)
+    if df.empty:
+        return []
+
+    week_end_row_idx: int | None = None
+    sex_blocks: list[tuple[int, str, int]] = []
+
+    for idx in range(len(df)):
+        first = df.iloc[idx, 0]
+        if (
+            week_end_row_idx is None
+            and isinstance(first, str)
+            and first.strip().lower() == "week ended"
+        ):
+            week_end_row_idx = idx
+        sex = _classify_sex_header(first)
+        if sex is not None:
+            sex_blocks.append((idx, sex, 0))
+            continue
+        if df.shape[1] > 1:
+            sex = _classify_sex_header(df.iloc[idx, 1])
+            if sex is not None:
+                sex_blocks.append((idx, sex, 1))
+
+    if week_end_row_idx is None or not sex_blocks:
+        return []
+
+    week_end_row = df.iloc[week_end_row_idx]
+    week_ends: list[tuple[int, pd.Timestamp]] = []
+    for column_idx in range(len(week_end_row)):
+        date_value = week_end_row.iloc[column_idx]
+        if pd.isna(date_value):
+            continue
+        try:
+            week_end = pd.Timestamp(date_value)
+        except (ValueError, TypeError):
+            continue
+        if pd.isna(week_end):
+            continue
+        week_ends.append((column_idx, week_end))
+
+    if not week_ends:
+        return []
+
+    band_totals: dict[tuple[pd.Timestamp, str, str], int] = {}
+
+    sex_blocks.sort(key=lambda item: item[0])
+    for block_idx, (start_idx, sex, label_col) in enumerate(sex_blocks):
+        end_idx = (
+            sex_blocks[block_idx + 1][0]
+            if block_idx + 1 < len(sex_blocks)
+            else len(df)
+        )
+        for row_idx in range(start_idx + 1, end_idx):
+            row = df.iloc[row_idx]
+            band = _canonical_age_band(row.iloc[label_col])
+            if band is None:
+                continue
+            for column_idx, week_end in week_ends:
+                value = row.iloc[column_idx]
+                deaths = pd.to_numeric(value, errors="coerce")
+                if pd.isna(deaths):
+                    continue
+                key = (week_end, sex, band)
+                band_totals[key] = (
+                    band_totals.get(key, 0) + int(round(float(deaths)))
+                )
+
+    return [
+        (week_end, sex, band, total)
+        for (week_end, sex, band), total in band_totals.items()
+    ]
+
+
+def _extract_weekly_sex_ages_fine_cols(
+    sheet_df: pd.DataFrame,
+    edition_year: int,
+) -> list[tuple[pd.Timestamp, str, str, int]]:
+    """
+    Pull (week_ending, sex, age_band, deaths) tuples from the 2022-2023 layout.
+
+    Sheet "2" stacks three tables vertically — Table 2a (people), 2b
+    (males), 2c (females) — each with its own ``Week ending`` /
+    ``All ages`` / fine-band header row. We find every header row, scan a
+    handful of rows above each for the sex marker (e.g. "Table 2b: ...
+    males"), and treat the rows up to the next header as that sex's block.
+    """
+    df = sheet_df.dropna(how="all").dropna(axis=1, how="all")
+    if df.empty:
+        return []
+
+    header_indices: list[int] = []
+    for idx, row in df.iterrows():
+        normalized = [str(v).strip().lower() for v in row.tolist()]
+        if (
+            "week ending" in normalized
+            and any(_canonical_age_band(v) for v in row.tolist())
+        ):
+            header_indices.append(int(idx))
+
+    if not header_indices:
+        return []
+
+    # Sequentialize the indices so we can take ranges.
+    df_indices = list(df.index)
+    band_totals: dict[tuple[pd.Timestamp, str, str], int] = {}
+
+    for h_idx, header_index in enumerate(header_indices):
+        # Look up to five rows above the header for a sex marker.
+        sex: str | None = None
+        for back in range(1, 6):
+            scan_idx = header_index - back
+            if scan_idx < df_indices[0]:
+                break
+            if scan_idx not in df.index:
+                continue
+            for value in df.loc[scan_idx].tolist():
+                sex = _classify_sex_header(value)
+                if sex is not None:
+                    break
+            if sex is not None:
+                break
+        if sex is None:
+            continue
+
+        headers = [str(v).strip() for v in df.loc[header_index].tolist()]
+        week_end_col_idx: int | None = None
+        age_columns: list[tuple[int, str]] = []
+        for column_idx, header in enumerate(headers):
+            if header.lower() == "week ending":
+                week_end_col_idx = column_idx
+                continue
+            band = _canonical_age_band(header)
+            if band is not None:
+                age_columns.append((column_idx, band))
+
+        if week_end_col_idx is None or not age_columns:
+            continue
+
+        end_index = (
+            header_indices[h_idx + 1]
+            if h_idx + 1 < len(header_indices)
+            else df_indices[-1] + 1
+        )
+
+        for _, row in df.loc[header_index + 1:end_index - 1].iterrows():
+            date_value = row.iloc[week_end_col_idx]
+            if pd.isna(date_value):
+                continue
+            try:
+                week_end = pd.Timestamp(date_value)
+            except (ValueError, TypeError):
+                continue
+            if pd.isna(week_end):
+                continue
+            for column_idx, band in age_columns:
+                value = row.iloc[column_idx]
+                deaths = pd.to_numeric(value, errors="coerce")
+                if pd.isna(deaths):
+                    continue
+                key = (week_end, sex, band)
+                band_totals[key] = (
+                    band_totals.get(key, 0) + int(round(float(deaths)))
+                )
+
+    return [
+        (week_end, sex, band, total)
+        for (week_end, sex, band), total in band_totals.items()
+    ]
+
+
+def _extract_weekly_sex_ages_long(
+    sheet_df: pd.DataFrame,
+    edition_year: int,
+) -> list[tuple[pd.Timestamp, str, str, int]]:
+    """
+    Pull (week_ending, sex, age_band, deaths) tuples from the 2024+ layout.
+
+    Each row is one (week, area, sex, age, IMD, place) cell. We filter to
+    the all-residents E&W area, all IMD groups, all places, and keep all
+    three sex values (All people / Male / Female) and any band row that
+    isn't "All ages". Fine 5-year bands collapse into the seven canonical
+    bands per (week, sex).
+    """
+    df = sheet_df.dropna(how="all").dropna(axis=1, how="all")
+    if df.empty:
+        return []
+
+    header_index: int | None = None
+    for idx, row in df.iterrows():
+        normalized = [str(v).strip().lower() for v in row.tolist()]
+        if (
+            "week number" in normalized
+            and any("week ending" in v or "week ended" in v for v in normalized)
+            and any("number of deaths" in v for v in normalized)
+            and any(v.startswith("age group") for v in normalized)
+            and "sex" in normalized
+        ):
+            header_index = int(idx)
+            break
+
+    if header_index is None:
+        return []
+
+    headers = [str(v).strip() for v in df.loc[header_index].tolist()]
+    body = df.loc[header_index + 1:].copy()
+    body.columns = headers
+    body = body.dropna(how="all")
+    if body.empty:
+        return []
+
+    body.columns = [str(c).strip() for c in body.columns]
+    name_lookup = {c.lower(): c for c in body.columns}
+
+    week_end_col = next(
+        (c for k, c in name_lookup.items() if "week ending" in k or "week ended" in k),
+        None,
+    )
+    deaths_col = next(
+        (c for k, c in name_lookup.items() if "number of deaths" in k),
+        None,
+    )
+    age_col = next(
+        (c for k, c in name_lookup.items() if k.startswith("age group")),
+        None,
+    )
+    area_col = name_lookup.get("area of usual residence") or name_lookup.get("area")
+    sex_col = name_lookup.get("sex")
+    imd_col = next((c for k, c in name_lookup.items() if "imd" in k), None)
+    place_col = next(
+        (c for k, c in name_lookup.items() if "place of occurrence" in k),
+        None,
+    )
+
+    if (
+        week_end_col is None
+        or deaths_col is None
+        or age_col is None
+        or area_col is None
+        or sex_col is None
+    ):
+        return []
+
+    ew_aliases = {
+        "england, wales and non-residents",
+        "england and wales",
+        "england & wales",
+    }
+    mask = body[area_col].astype(str).str.strip().str.lower().isin(ew_aliases)
+    if imd_col is not None:
+        mask &= body[imd_col].astype(str).str.strip().str.lower() == "all groups"
+    if place_col is not None:
+        mask &= body[place_col].astype(str).str.strip().str.lower() == "all places"
+    mask &= body[age_col].astype(str).str.strip().str.lower() != "all ages"
+
+    sex_aliases = {
+        "all people": "All people",
+        "male": "Male",
+        "female": "Female",
+    }
+    sex_normalized = body[sex_col].astype(str).str.strip().str.lower()
+    mask &= sex_normalized.isin(sex_aliases.keys())
+
+    selected = body.loc[mask, [week_end_col, sex_col, age_col, deaths_col]].copy()
+    if selected.empty:
+        return []
+
+    selected[deaths_col] = pd.to_numeric(selected[deaths_col], errors="coerce")
+    selected = selected.dropna(subset=[deaths_col])
+    selected["__sex__"] = (
+        selected[sex_col].astype(str).str.strip().str.lower().map(sex_aliases)
+    )
+    selected["__band__"] = selected[age_col].map(_canonical_age_band)
+    selected = selected.dropna(subset=["__sex__", "__band__"])
+
+    band_totals: dict[tuple[pd.Timestamp, str, str], int] = {}
+    for _, row in selected.iterrows():
+        try:
+            week_end = pd.Timestamp(row[week_end_col])
+        except (ValueError, TypeError):
+            continue
+        if pd.isna(week_end):
+            continue
+        sex = str(row["__sex__"])
+        band = str(row["__band__"])
+        key = (week_end, sex, band)
+        band_totals[key] = (
+            band_totals.get(key, 0) + int(round(float(row[deaths_col])))
+        )
+
+    return [
+        (week_end, sex, band, total)
+        for (week_end, sex, band), total in band_totals.items()
+    ]
+
+
+def extract_weekly_sex_age_deaths(path: Path, edition_year: int) -> pd.DataFrame:
+    """Return the E&W weekly per-(sex × age) series for one workbook."""
+    rows: list[tuple[pd.Timestamp, str, str, int]] = []
+    for _, sheet_df in read_workbook_sheets(path):
+        rows = _extract_weekly_sex_ages_block_format(sheet_df, edition_year)
+        if rows:
+            break
+        rows = _extract_weekly_sex_ages_fine_cols(sheet_df, edition_year)
+        if rows:
+            break
+        rows = _extract_weekly_sex_ages_long(sheet_df, edition_year)
+        if rows:
+            break
+
+    if not rows:
+        return pd.DataFrame(
+            columns=["week_ending", "sex", "age_band", "observed_deaths"]
+        )
+
+    df = pd.DataFrame(
+        rows, columns=["week_ending", "sex", "age_band", "observed_deaths"]
+    )
+    return (
+        df.groupby(["week_ending", "sex", "age_band"], as_index=False)
+        ["observed_deaths"].sum()
+        .sort_values(["week_ending", "sex", "age_band"])
+        .reset_index(drop=True)
+    )
+
+
+def fetch_weekly_sex_age_deaths(
+    raw_dir: Path,
+    start_year: int = 2010,
+    end_year: int | None = None,
+    overwrite: bool = False,
+    files: list[ONSFile] | None = None,
+) -> pd.DataFrame:
+    """
+    Download every ONS weekly workbook in range and return per-(sex × band) rows.
+
+    Result is a long DataFrame with one row per (week, sex, age_band) using
+    the seven canonical age bands and three canonical sex labels
+    (All people / Male / Female). Provenance columns are kept; deduplication
+    prefers final over provisional editions, then the most recent year.
+    """
+    if files is None:
+        files = discover_ons_files(
+            start_year=start_year,
+            end_year=end_year,
+            dataset_url=ONS_WEEKLY_DATASET_URL,
+        )
+    if not files:
+        raise RuntimeError(
+            "No ONS weekly workbooks were discovered for the requested range."
+        )
+
+    raw_dir.mkdir(parents=True, exist_ok=True)
+
+    frames: list[pd.DataFrame] = []
+    for ons_file, local_path in iter_downloaded_files(
+        files,
+        output_dir=raw_dir,
+        overwrite=overwrite,
+    ):
+        rows = extract_weekly_sex_age_deaths(
+            path=local_path,
+            edition_year=ons_file.edition_year,
+        )
+        if rows.empty:
+            continue
+
+        rows = rows.assign(
+            edition_year=ons_file.edition_year,
+            is_final=ons_file.is_final,
+            source_filename=local_path.name,
+        )
+        frames.append(rows)
+
+    if not frames:
+        raise RuntimeError(
+            "Workbooks were downloaded but no per-(sex × age) rows were extracted. "
+            "The ONS weekly sheet layout may have changed."
+        )
+
+    combined = pd.concat(frames, ignore_index=True)
+    combined["week_ending"] = pd.to_datetime(combined["week_ending"])
+    combined["observed_deaths"] = (
+        pd.to_numeric(combined["observed_deaths"], errors="raise").astype(int)
+    )
+
+    combined["_is_final_int"] = combined["is_final"].astype(int)
+    combined = combined.sort_values(
+        ["sex", "age_band", "week_ending", "_is_final_int", "edition_year"],
+        ascending=[True, True, True, False, False],
+    ).drop_duplicates(subset=["sex", "age_band", "week_ending"], keep="first")
+
+    output = combined[
+        [
+            "week_ending",
+            "sex",
+            "age_band",
+            "observed_deaths",
+            "edition_year",
+            "is_final",
+            "source_filename",
+        ]
+    ].sort_values(["sex", "age_band", "week_ending"]).reset_index(drop=True)
+
+    return output

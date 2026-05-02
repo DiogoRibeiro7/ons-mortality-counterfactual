@@ -9,6 +9,9 @@ import numpy as np
 import pandas as pd
 
 
+TREND_SPECS = ("linear", "log_linear", "quadratic")
+
+
 @dataclass(frozen=True)
 class CounterfactualConfig:
     """Configuration for the mortality counterfactual model."""
@@ -18,6 +21,13 @@ class CounterfactualConfig:
     random_seed: int = 42
     fourier_order: int = 3
     interval_mass: float = 0.94
+    # 'linear': y = β0 + β1·t + Fourier (default; matches the original repo).
+    # 'log_linear': log(y) = β0 + β1·t + Fourier — fits an exponential trend
+    #   in the original space; appropriate when mortality drift accelerates
+    #   under population aging. Backtest motivation: nb 10.
+    # 'quadratic': y = β0 + β1·t + β2·t² + Fourier — captures non-constant
+    #   acceleration without a multiplicative model.
+    trend_spec: str = "linear"
 
 
 def validate_counterfactual_input(df: pd.DataFrame) -> pd.DataFrame:
@@ -54,7 +64,11 @@ def validate_counterfactual_input(df: pd.DataFrame) -> pd.DataFrame:
     return clean.reset_index(drop=True)
 
 
-def build_design_matrix(dates: pd.Series | pd.DatetimeIndex, fourier_order: int = 3) -> np.ndarray:
+def build_design_matrix(
+    dates: pd.Series | pd.DatetimeIndex,
+    fourier_order: int = 3,
+    trend_spec: str = "linear",
+) -> np.ndarray:
     """
     Build a trend-plus-seasonality design matrix.
 
@@ -64,6 +78,12 @@ def build_design_matrix(dates: pd.Series | pd.DatetimeIndex, fourier_order: int 
         Monthly dates.
     fourier_order:
         Number of annual Fourier harmonics.
+    trend_spec:
+        ``'linear'`` (default) → intercept + t + Fourier columns.
+        ``'log_linear'`` → same columns as ``'linear'``; the multiplicative
+        form is realised by transforming y to log-space inside
+        :func:`fit_counterfactual` rather than changing the design matrix.
+        ``'quadratic'`` → adds a t² column for non-constant acceleration.
 
     Returns
     -------
@@ -72,6 +92,10 @@ def build_design_matrix(dates: pd.Series | pd.DatetimeIndex, fourier_order: int 
     """
     if fourier_order < 1:
         raise ValueError("fourier_order must be at least 1.")
+    if trend_spec not in TREND_SPECS:
+        raise ValueError(
+            f"trend_spec must be one of {TREND_SPECS}; got {trend_spec!r}."
+        )
 
     resolved_dates = pd.DatetimeIndex(pd.to_datetime(dates))
     n_dates = len(resolved_dates)
@@ -82,12 +106,16 @@ def build_design_matrix(dates: pd.Series | pd.DatetimeIndex, fourier_order: int 
     trend = np.arange(n_dates, dtype=float)
     month = resolved_dates.month.astype(float)
 
+    trend_columns: list[np.ndarray] = [np.ones(n_dates), trend]
+    if trend_spec == "quadratic":
+        trend_columns.append(trend ** 2)
+
     seasonal_terms: list[np.ndarray] = []
     for harmonic in range(1, fourier_order + 1):
         seasonal_terms.append(np.sin(2.0 * np.pi * harmonic * month / 12.0))
         seasonal_terms.append(np.cos(2.0 * np.pi * harmonic * month / 12.0))
 
-    return np.column_stack([np.ones(n_dates), trend, *seasonal_terms])
+    return np.column_stack([*trend_columns, *seasonal_terms])
 
 
 def fit_counterfactual(
@@ -122,15 +150,37 @@ def fit_counterfactual(
     if not 0.0 < cfg.interval_mass < 1.0:
         raise ValueError("interval_mass must be between 0 and 1.")
 
+    if cfg.trend_spec not in TREND_SPECS:
+        raise ValueError(
+            f"trend_spec must be one of {TREND_SPECS}; got {cfg.trend_spec!r}."
+        )
+
     pandemic_onset = pd.Timestamp(cfg.pandemic_onset)
     train_mask = clean["month_date"] < pandemic_onset
 
     if train_mask.sum() < 24:
         raise ValueError("At least 24 pre-pandemic months are required.")
 
-    X_train = build_design_matrix(clean.loc[train_mask, "month_date"], cfg.fourier_order)
-    y_train = clean.loc[train_mask, "observed_deaths"].to_numpy(dtype=float)
-    X_all = build_design_matrix(clean["month_date"], cfg.fourier_order)
+    # log_linear shares the linear design matrix; the difference is on y.
+    design_spec = "linear" if cfg.trend_spec == "log_linear" else cfg.trend_spec
+    X_train = build_design_matrix(
+        clean.loc[train_mask, "month_date"],
+        cfg.fourier_order,
+        trend_spec=design_spec,
+    )
+    y_train_raw = clean.loc[train_mask, "observed_deaths"].to_numpy(dtype=float)
+    X_all = build_design_matrix(
+        clean["month_date"], cfg.fourier_order, trend_spec=design_spec,
+    )
+
+    if cfg.trend_spec == "log_linear":
+        if (y_train_raw <= 0).any():
+            raise ValueError(
+                "log_linear trend requires strictly positive observed_deaths."
+            )
+        y_train = np.log(y_train_raw)
+    else:
+        y_train = y_train_raw
 
     n_obs, n_params = X_train.shape
     if n_obs <= n_params:
@@ -166,6 +216,14 @@ def fit_counterfactual(
             scale=np.sqrt(sigma2),
             size=len(clean),
         )
+
+    if cfg.trend_spec == "log_linear":
+        # Back-transform predictive draws to the original scale before quantile
+        # extraction. exp is monotonic, so quantiles back-transform correctly,
+        # but exp(N(μ, σ²)) is lognormal — the predictive mean ≠ exp(median).
+        # We still report the median of back-transformed draws, which is the
+        # natural point estimate for a multiplicative model.
+        predictions = np.exp(predictions)
 
     alpha = 1.0 - cfg.interval_mass
     lower_q = alpha / 2.0

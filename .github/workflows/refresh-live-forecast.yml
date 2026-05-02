@@ -43,6 +43,18 @@ jobs:
             --start-year 2006 \
             --end-year $(date +%Y)
 
+      - name: Fetch latest ONS weekly age-band data
+        run: |
+          ons-mortality fetch-weekly-ages \
+            --start-year 2010 \
+            --end-year $(date +%Y)
+
+      - name: Fetch latest ONS weekly sex × age-band data
+        run: |
+          ons-mortality fetch-weekly-sex-ages \
+            --start-year 2010 \
+            --end-year $(date +%Y)
+
       - name: Re-execute notebook 01 (counterfactual mortality)
         run: |
           jupyter nbconvert \
@@ -59,6 +71,38 @@ jobs:
             --inplace \
             notebooks/07_live_forecast.ipynb
 
+      - name: Re-execute notebook 08 (age-band excess)
+        run: |
+          jupyter nbconvert \
+            --to notebook \
+            --execute \
+            --inplace \
+            notebooks/08_age_band_excess.ipynb
+
+      - name: Re-execute notebook 09 (sex × age excess)
+        run: |
+          jupyter nbconvert \
+            --to notebook \
+            --execute \
+            --inplace \
+            notebooks/09_sex_age_excess.ipynb
+
+      - name: Re-execute notebook 10 (backtest calibration)
+        run: |
+          jupyter nbconvert \
+            --to notebook \
+            --execute \
+            --inplace \
+            notebooks/10_backtest_calibration.ipynb
+
+      - name: Re-execute notebook 11 (trend specification)
+        run: |
+          jupyter nbconvert \
+            --to notebook \
+            --execute \
+            --inplace \
+            notebooks/11_trend_specification.ipynb
+
       - name: Re-render the README figures
         run: |
           python scripts/render_readme_figures.py
@@ -70,9 +114,15 @@ jobs:
 
           git add \
             data/processed/england_wales_monthly_deaths.csv \
+            data/processed/england_wales_weekly_age_deaths.csv \
+            data/processed/england_wales_weekly_sex_age_deaths.csv \
             figures/ \
             notebooks/01_counterfactual_mortality.ipynb \
-            notebooks/07_live_forecast.ipynb
+            notebooks/07_live_forecast.ipynb \
+            notebooks/08_age_band_excess.ipynb \
+            notebooks/09_sex_age_excess.ipynb \
+            notebooks/10_backtest_calibration.ipynb \
+            notebooks/11_trend_specification.ipynb
 
           if git diff --staged --quiet; then
             echo "No changes from this refresh."

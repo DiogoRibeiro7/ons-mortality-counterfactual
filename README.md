@@ -162,6 +162,34 @@ Two projections share one design matrix: the **counterfactual** trained on pre-2
 
 ![Live forecast and counterfactual](figures/live_forecast.png)
 
+**[`08_age_band_excess.ipynb`](notebooks/08_age_band_excess.ipynb)** — per-age-band counterfactual.
+
+Refits the same counterfactual independently for seven canonical age bands (Under 1, 1-14, 15-44, 45-64, 65-74, 75-84, 85+) using the ONS weekly age breakdown. Cumulative 2020-2024 excess by band: **75-84 (~94k) > 85+ (~72k) > 45-64 (~40k) > 65-74 (~26k) > 15-44 (~10k)**, summing to ~243k (matches notebook 01 within ~1%). The more interesting finding is *temporal*: 85+ excess collapses ~90% from 2020 (~28k) to 2024 (~3k), while 45-64 stays stubbornly elevated. By 2024 the residual excess is concentrated in middle age, not the very elderly — the same regime change visible in notebook 06's COVID/non-COVID split, now seen through age. A 2024 reversion check on the 85+ band (observed/counterfactual ratio ≈ 1.00) shows the elderly story is *reversion to baseline*, not displacement undershoot.
+
+Run `ons-mortality fetch-weekly-ages` first to build the input CSV.
+
+![Pandemic excess by age band](figures/age_stratified_excess.png)
+
+**[`09_sex_age_excess.ipynb`](notebooks/09_sex_age_excess.ipynb)** — sex × age decomposition.
+
+Refits the counterfactual independently for every (sex, age band) pair using ONS's Persons / Males / Females weekly blocks. Cumulative 2020-2024 totals: **Male ~130k, Female ~114k** — a ~14% absolute gap. The skew is *concentrated in 45-64* (M ~26k vs F ~14k; ratio 1.86×) — exactly the band that notebook 08 flagged as the persistent post-2022 residual. Relative-to-counterfactual excess confirms men lead by ~3pp in 45-64 (14.4% vs 11.5%); women lead modestly in 15-44 (15.8% vs 12.8%) and 75-84 (13.4% vs 12.1%). The acute pandemic gap closes by 2024 (annual totals within ~7%) because elderly bands revert; **the male middle-age residual does not**.
+
+Run `ons-mortality fetch-weekly-sex-ages` first to build the input CSV.
+
+![Pandemic excess by sex and age band](figures/sex_age_excess.png)
+
+**[`10_backtest_calibration.ipynb`](notebooks/10_backtest_calibration.ipynb)** — does the model actually work?
+
+Tests the model itself rather than applying it to a new slice. Holds out 2017-2019 (36 months) and refits on 2006-2016 across all four stratifications used elsewhere in the repo: **32 independent fits, scored on the same holdout**. Headline finding: **calibration improves with finer slicing**. National-level nominal 94% intervals achieve only ~89% empirical coverage; the per-(sex × band) fits used in nb 09 cluster at 94-100% (mean 97%). Bias is uniformly positive at the national/regional level — the linear trend lags actual upward drift in the series by 1-3% — implying nb 01's headline ~245k could be over-stated by ~10-15%, which is the gap that nb 03's negative-binomial GLM and nb 04's ASMR analysis already partially close. The Fourier-order sweep on the holdout suggests order 2 would be marginally better calibrated than the default order 3, with no MAE cost. **Net verdict**: nb 08 and nb 09 conclusions stand without modification; nb 01 / nb 02 should be read with credible intervals widened ~5pp.
+
+![Backtest calibration across 32 fits](figures/backtest_calibration.png)
+
+**[`11_trend_specification.ipynb`](notebooks/11_trend_specification.ipynb)** — does a different trend term close the bias gap?
+
+Direct response to nb 10's bias finding. The counterfactual model now supports three trend forms via `CounterfactualConfig(trend_spec=...)`: **`linear`** (existing default), **`log_linear`** (multiplicative — the demographer's standard for mortality), and **`quadratic`** (additive curvature). Compares all three on the same data. Headline: **none of them eliminates the bias cleanly**. log-linear improves coverage marginally (89% → 92%) but barely changes the headline (~243k → ~252k, ~+4%) because E&W mortality drift is too gentle for log/linear to differ meaningfully. Quadratic also improves coverage but **moves the headline by ~17%** (~243k → ~286k) — driven almost entirely by the 85+ band, where pre-pandemic deceleration causes quadratic to project a flat counterfactual and read the post-2020 deviation as much larger. The 45-64 band moves the *opposite* way under quadratic (40k → 25k), which suggests nb 09's "persistent middle-age male residual" finding is partly trend-spec-dependent. **Verdict**: keep linear as the default but report the headline as a range — *~245-285k cumulative excess (2020-2024), depending on how the pre-pandemic trend is extrapolated*. nb 03 (NB GLM, ~282k) and nb 04 (ASMR, ~281k) both fall near the upper end of this range and become the more theoretically defensible point estimates if a single number is required.
+
+![Trend specification comparison](figures/trend_specification.png)
+
 ## Continuous refresh
 
 [`.github/workflows/refresh-live-forecast.yml`](.github/workflows/refresh-live-forecast.yml) re-runs the live forecast on a monthly schedule (the 25th, 02:00 UTC — a day after ONS typically publishes the new edition). The workflow:
