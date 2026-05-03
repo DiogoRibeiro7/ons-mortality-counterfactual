@@ -20,7 +20,7 @@ A reproducible portfolio analysis built around the ONS *Monthly figures on death
 
 - A **fetcher** that downloads every ONS annual workbook (2006-2024), parses two distinct sheet layouts (legacy wide-format and 2023+ long-format) plus the Series DR cause-of-death table, dedupes provisional/final editions, and writes tidy CSVs.
 - A **Bayesian counterfactual model** with three trend specifications (linear / log-linear / quadratic), conjugate Gaussian posterior, and predictive credible intervals.
-- **12 notebooks** that progressively decompose the ~245k headline by region, age band, sex × age, and cause of death — each with its own counterfactual fit and headline figure embedded in this README below.
+- **12 notebooks** that progressively decompose the ~245k headline by region, age band, sex × age, and cause of death — each with its own counterfactual fit; the four figures most central to the headline narrative are embedded in this README, the rest live under [`figures/`](figures/).
 - **Backtested calibration** (nb 10) and **trend-specification sensitivity analysis** (nb 11), so each headline number comes with a defensible uncertainty range.
 - **Optional MySQL ingestion path** with a normalized schema for cross-querying, plus a **monthly GitHub Actions refresh** that pulls fresh ONS data and re-executes the analysis on the 25th of each month.
 
@@ -71,7 +71,7 @@ ons-mortality-counterfactual/
 ├── data/
 │   ├── raw/        # cached ONS workbooks
 │   └── processed/  # tidy CSV exports (10 datasets)
-└── figures/        # rendered charts (9 embedded in this README)
+└── figures/        # 9 rendered charts (4 embedded in this README)
 ```
 
 ## Requirements
@@ -130,7 +130,7 @@ poetry run ons-mortality plot
 
 ## Notebooks
 
-The repository ships three notebooks, each producing reproducible figures from the cached CSVs.
+The repository ships twelve notebooks, each producing reproducible figures from the cached CSVs. They follow a deliberate arc — the first seven establish the headline national/regional excess and supporting methodology; the last five (08-12) decompose that excess by age, sex, validate the model on a holdout, test trend-specification sensitivity, and decompose by cause of death.
 
 **[`01_counterfactual_mortality.ipynb`](notebooks/01_counterfactual_mortality.ipynb)** — the headline analysis.
 
@@ -148,8 +148,6 @@ Cumulative excess (2020-2024) under the linear-trend default: **~245k**. See nb 
 **[`02_regional_excess.ipynb`](notebooks/02_regional_excess.ipynb)** — sub-national breakdown.
 
 Refits the same model independently for the 9 English regions plus Wales, and ranks them by per-capita pandemic excess. The absolute and per-capita rankings disagree sharply: London tops the absolute table but is near the bottom per capita, while the North West tops the per-capita table at 5.48 excess deaths per 1 000.
-
-![Per-capita pandemic excess by region](figures/regional_per_capita_excess.png)
 
 Run `ons-mortality fetch-regional` first to build the input CSV.
 
@@ -171,13 +169,9 @@ Run `ons-mortality fetch-weekly` first to build the input CSV.
 
 Decomposes the year-by-year excess into direct COVID-19 deaths and non-COVID residual. Two distinct regimes: in **2020–2021 COVID-19 over-explains the excess** (lockdowns suppressed flu, road accidents, and other typical killers, so non-COVID mortality fell). In **2022 the split is roughly 80/20**. By **2023–2024 COVID-19 explains only ~30%** of excess; the residual ~20 000 deaths/year is attributable elsewhere (delayed treatment, NHS pressure, post-acute pandemic effects). Cumulative split: ~204k COVID-19 + ~42k non-COVID = ~246k total.
 
-![Annual excess deaths: COVID-19 vs non-COVID component](figures/covid_vs_non_covid_excess.png)
-
 **[`07_live_forecast.ipynb`](notebooks/07_live_forecast.ipynb)** — forward projection.
 
 Two projections share one design matrix: the **counterfactual** trained on pre-2020 data only, and the **forecast** trained on all observed months. Both project 24 months past the latest ONS edition. The gap between them implies a **structural \"new normal\" elevation of ~35–40 thousand deaths per year** through 2026 — close to the recent post-pandemic excess running rate. Includes an "is the latest month inside the forecast 94% interval?" check that's the natural anchor for monitoring fresh ONS publications.
-
-![Live forecast and counterfactual](figures/live_forecast.png)
 
 **[`08_age_band_excess.ipynb`](notebooks/08_age_band_excess.ipynb)** — per-age-band counterfactual.
 
@@ -185,11 +179,9 @@ Refits the same counterfactual independently for seven canonical age bands (Unde
 
 Run `ons-mortality fetch-weekly-ages` first to build the input CSV.
 
-![Pandemic excess by age band](figures/age_stratified_excess.png)
-
 **[`09_sex_age_excess.ipynb`](notebooks/09_sex_age_excess.ipynb)** — sex × age decomposition.
 
-Refits the counterfactual independently for every (sex, age band) pair using ONS's Persons / Males / Females weekly blocks. Cumulative 2020-2024 totals: **Male ~130k, Female ~114k** — a ~14% absolute gap. The skew is *concentrated in 45-64* (M ~26k vs F ~14k; ratio 1.86×) — exactly the band that notebook 08 flagged as the persistent post-2022 residual. Relative-to-counterfactual excess confirms men lead by ~3pp in 45-64 (14.4% vs 11.5%); women lead modestly in 15-44 (15.8% vs 12.8%) and 75-84 (13.4% vs 12.1%). The acute pandemic gap closes by 2024 (annual totals within ~7%) because elderly bands revert; **the male middle-age residual does not**.
+Refits the counterfactual independently for every (sex, age band) pair using ONStotals: **Male ~130k, Female ~114k** — a ~14% absolute gap. The skew is *concentrated in 45-64* (M ~26k vs F ~14k; ratio 1.86×) — exactly the band that notebook 08 flagged as the persistent post-2022 residual. Relative-to-counterfactual excess confirms men lead by ~3pp in 45-64 (14.4% vs 11.5%); women lead modestly in 15-44 (15.8% vs 12.8%) and 75-84 (13.4% vs 12.1%). The acute pandemic gap closes by 2024 (annual totals within ~7%) because elderly bands revert; **the male middle-age residual does not**.
 
 Run `ons-mortality fetch-weekly-sex-ages` first to build the input CSV.
 
@@ -204,8 +196,6 @@ Tests the model itself rather than applying it to a new slice. Holds out 2017-20
 **[`11_trend_specification.ipynb`](notebooks/11_trend_specification.ipynb)** — does a different trend term close the bias gap?
 
 Direct response to nb 10's bias finding. The counterfactual model now supports three trend forms via `CounterfactualConfig(trend_spec=...)`: **`linear`** (existing default), **`log_linear`** (multiplicative — the demographer's standard for mortality), and **`quadratic`** (additive curvature). Compares all three on the same data. Headline: **none of them eliminates the bias cleanly**. log-linear improves coverage marginally (89% → 92%) but barely changes the headline (~243k → ~252k, ~+4%) because E&W mortality drift is too gentle for log/linear to differ meaningfully. Quadratic also improves coverage but **moves the headline by ~17%** (~243k → ~286k) — driven almost entirely by the 85+ band, where pre-pandemic deceleration causes quadratic to project a flat counterfactual and read the post-2020 deviation as much larger. The 45-64 band moves the *opposite* way under quadratic (40k → 25k), which suggests nb 09's "persistent middle-age male residual" finding is partly trend-spec-dependent. **Verdict**: keep linear as the default but report the headline as a range — *~245-285k cumulative excess (2020-2024), depending on how the pre-pandemic trend is extrapolated*. nb 03 (NB GLM, ~282k) and nb 04 (ASMR, ~281k) both fall near the upper end of this range and become the more theoretically defensible point estimates if a single number is required.
-
-![Trend specification comparison](figures/trend_specification.png)
 
 **[`12_cause_decomposition.ipynb`](notebooks/12_cause_decomposition.ipynb)** — what killed the working-age men?
 
