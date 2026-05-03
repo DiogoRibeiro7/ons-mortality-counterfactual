@@ -10,7 +10,7 @@ packages = [{ include = "ons_mortality", from = "src" }]
 [tool.poetry.dependencies]
 python = ">=3.10,<3.14"
 beautifulsoup4 = "^4.12.3"
-cryptography = "^42.0.0"
+cryptography = ">=42,<47"
 matplotlib = "^3.8.0"
 numpy = "^1.26.0"
 openpyxl = "^3.1.5"
@@ -23,7 +23,7 @@ statsmodels = "^0.14"
 xlrd = "^2.0.1"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^8.2.0"
+pytest = ">=8.2,<10.0"
 ruff = "^0.5.0"
 mypy = "^1.10.0"
 pandas-stubs = "^2.2.2.240603"
