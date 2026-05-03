@@ -1,25 +1,28 @@
 # ONS Mortality Counterfactual
 
-Python project that downloads the ONS *Monthly figures on deaths registered by area of usual residence* workbooks, extracts the England & Wales national series, and fits a pre-pandemic counterfactual to estimate excess mortality from March 2020 onwards.
+**How big was the England & Wales pandemic, and who is still dying because of it?**
 
-The repository ships with two paths:
+Cumulative excess deaths from March 2020 to December 2024 land in the **~245-285k range**, depending on how the pre-pandemic trend is extrapolated. The acute pandemic phase has largely faded — the 85+ cohort sits at counterfactual by 2024 — but a persistent post-2022 residual remains. It is **concentrated in 45-64 men, and the cause-of-death decomposition shows it is cardiovascular and alcohol-related disease, not drugs or suicide**, flatly contradicting the lay "deaths of despair" narrative.
 
-- **No-MySQL path (recommended).** A single CLI command (`ons-mortality run`) downloads every annual ONS workbook, parses both the legacy wide-format and the 2023+ long-format layouts, writes a tidy CSV, fits the counterfactual, and saves the chart.
-- **MySQL path.** The original ingestion pipeline that stores raw source-file metadata and a normalized `monthly_deaths` table in MySQL via Docker. Useful when the project's data needs to be queried alongside other datasets.
+![Pandemic excess by age band](figures/age_stratified_excess.png)
 
-![England & Wales counterfactual chart](figures/england_wales_counterfactual.png)
+## Key findings
 
-## What this repository does
+- **~243-285k cumulative excess deaths in 2020-2024 across three methodologies** — Bayesian linear (243k), negative-binomial GLM (282k), age-standardised mortality rate (281k). The 17% spread is driven entirely by how the pre-pandemic trend is extrapolated; quadratic and per-capita formulations both land near the upper end of the range. *See [`01_counterfactual_mortality.ipynb`](notebooks/01_counterfactual_mortality.ipynb), [`03_negative_binomial_glm.ipynb`](notebooks/03_negative_binomial_glm.ipynb), [`04_age_standardized_rate.ipynb`](notebooks/04_age_standardized_rate.ipynb), [`11_trend_specification.ipynb`](notebooks/11_trend_specification.ipynb).*
+- **The 85+ cohort has reverted to baseline by 2024.** Its excess fell ~90% from 2020 (~28k) to 2024 (~3k). The 2024 observed-to-counterfactual ratio is ~1.00 — no displacement undershoot, just reversion. Contradicts the "the elderly are still dying" narrative. *See [`08_age_band_excess.ipynb`](notebooks/08_age_band_excess.ipynb).*
+- **The persistent post-2022 residual is middle-aged and predominantly male.** 45-64 male cumulative excess is ~26k vs ~14k female (M:F ratio 1.86×); the gap does not close as the elderly bands revert. By 2024 the residual excess is concentrated in 45-64 men and 75-84 men, not the very elderly. *See [`09_sex_age_excess.ipynb`](notebooks/09_sex_age_excess.ipynb).*
+- **The cause is cardiovascular + alcohol-related, not drugs or suicide.** ICD-10 chapter decomposition of Male 45-64 excess: COVID-19 U codes ~+11.8k (61%), circulatory (heart, stroke) ~+6.1k (32%), digestive (incl. alcohol-related liver) ~+2.5k (13%), neoplasms drift +1.1k. **External causes — suicide, drug poisoning, alcohol poisoning, accidents — sit *below* projection** (cumulative ~−0.8k). The "deaths of despair" hypothesis fails the data test for this cohort. *See [`12_cause_decomposition.ipynb`](notebooks/12_cause_decomposition.ipynb).*
+- **The model is well-calibrated where it matters.** A 2017-2019 holdout backtest across 32 fits shows nominal 94% credible intervals achieve 89% empirical coverage at the national level (slight under-cover) but 94-100% at the per-(sex × band) level used in the headline findings — meaning the per-band conclusions are well-calibrated. *See [`10_backtest_calibration.ipynb`](notebooks/10_backtest_calibration.ipynb).*
 
-1. Discovers ONS annual mortality workbooks from the public dataset page.
-2. Downloads them with on-disk caching and polite throttling (the ONS site rate-limits aggressive clients).
-3. Extracts the England & Wales national monthly series. Two layouts are supported:
-   - 2006-2022 — wide format with one column per month and a "pyramid" admin hierarchy.
-   - 2023+ — long format with columns ``Month``, ``Code``, ``Geography``, ``Number of deaths``.
-4. When a final edition supersedes a provisional one, the more authoritative figure wins.
-5. Fits a Bayesian-style linear regression (linear trend + annual Fourier seasonality, conjugate Gaussian posterior) on data strictly before March 2020.
-6. Projects the no-pandemic trajectory forward and computes excess deaths against the counterfactual median.
-7. Optionally loads everything into MySQL for downstream querying.
+## What this repository is
+
+A reproducible portfolio analysis built around the ONS *Monthly figures on deaths registered by area of usual residence* and *Series DR reference tables* datasets. It ships:
+
+- A **fetcher** that downloads every ONS annual workbook (2006-2024), parses two distinct sheet layouts (legacy wide-format and 2023+ long-format) plus the Series DR cause-of-death table, dedupes provisional/final editions, and writes tidy CSVs.
+- A **Bayesian counterfactual model** with three trend specifications (linear / log-linear / quadratic), conjugate Gaussian posterior, and predictive credible intervals.
+- **12 notebooks** that progressively decompose the ~245k headline by region, age band, sex × age, and cause of death — each with its own counterfactual fit and headline figure embedded in this README below.
+- **Backtested calibration** (nb 10) and **trend-specification sensitivity analysis** (nb 11), so each headline number comes with a defensible uncertainty range.
+- **Optional MySQL ingestion path** with a normalized schema for cross-querying, plus a **monthly GitHub Actions refresh** that pulls fresh ONS data and re-executes the analysis on the 25th of each month.
 
 ## Project structure
 
@@ -37,24 +40,38 @@ ons-mortality-counterfactual/
 │       ├── __init__.py
 │       ├── cli.py
 │       ├── config.py
-│       ├── counterfactual.py
+│       ├── counterfactual.py    # Bayesian linear model + 3 trend specs
 │       ├── database.py
-│       ├── fetch.py
+│       ├── fetch.py             # ONS workbook discovery + 4 layout parsers
 │       ├── ons.py
-│       └── parser.py
+│       ├── parser.py
+│       └── population.py        # population & ASMR helpers
 ├── scripts/
-│   └── make_counterfactual_plot.py
+│   ├── make_counterfactual_plot.py
+│   └── render_readme_figures.py
 ├── notebooks/
-│   └── 01_counterfactual_mortality.ipynb
+│   ├── 01_counterfactual_mortality.ipynb
+│   ├── 02_regional_excess.ipynb
+│   ├── 03_negative_binomial_glm.ipynb
+│   ├── 04_age_standardized_rate.ipynb
+│   ├── 05_weekly_mortality.ipynb
+│   ├── 06_cause_decomposition.ipynb       # COVID-19 vs non-COVID
+│   ├── 07_live_forecast.ipynb
+│   ├── 08_age_band_excess.ipynb           # 7 canonical age bands
+│   ├── 09_sex_age_excess.ipynb            # sex × age (14 fits)
+│   ├── 10_backtest_calibration.ipynb      # 32-fit holdout test
+│   ├── 11_trend_specification.ipynb       # linear / log-linear / quadratic
+│   └── 12_cause_decomposition.ipynb       # ICD-10 chapter breakdown
 ├── tests/
 │   ├── test_counterfactual.py
 │   ├── test_fetch.py
 │   ├── test_ons.py
-│   └── test_parser.py
+│   ├── test_parser.py
+│   └── test_population.py
 ├── data/
 │   ├── raw/        # cached ONS workbooks
-│   └── processed/  # tidy CSV exports
-└── figures/        # rendered charts
+│   └── processed/  # tidy CSV exports (10 datasets)
+└── figures/        # rendered charts (9 embedded in this README)
 ```
 
 ## Requirements
@@ -126,7 +143,7 @@ The repository ships three notebooks, each producing reproducible figures from t
 7. Sensitivity to the Fourier order
 8. Demographic decomposition: how much of the pre-pandemic trend is population growth vs ageing vs per-person risk
 
-Cumulative excess (2020-2024): **~245 000**.
+Cumulative excess (2020-2024) under the linear-trend default: **~245k**. See nb 11 for the 245-285k defensible range across trend specs.
 
 **[`02_regional_excess.ipynb`](notebooks/02_regional_excess.ipynb)** — sub-national breakdown.
 
@@ -190,6 +207,12 @@ Direct response to nb 10's bias finding. The counterfactual model now supports t
 
 ![Trend specification comparison](figures/trend_specification.png)
 
+**[`12_cause_decomposition.ipynb`](notebooks/12_cause_decomposition.ipynb)** — what killed the working-age men?
+
+Direct follow-up to nb 09's "persistent post-2022 45-64 male residual" finding. Pulls the ONS Series DR annual reference table (`ons-mortality fetch-cause-by-sex-age`) which breaks deaths down by ICD-10 chapter × sex × age × place, 2015-2024. Fits a linear projection through 2015-2019 per (sex, 45-64, chapter) cell and decomposes the post-pandemic deviation. Headline finding: **the 45-64 male residual is cardiovascular + alcohol-related, not drugs/suicide**. Top contributors to cumulative 2020-2024 male 45-64 excess: COVID-19 U codes (~+11.8k, 61%), **circulatory disease (heart/stroke) ~+6.1k (32%) — running ~+1.4k/year through 2022-2023 and still ~+750 in 2024**, digestive disease (incl. alcohol-related liver) ~+2.5k (13%), neoplasms ~+1.1k (small drift only). External causes — suicide, drug poisoning, alcohol poisoning, accidents — sit at *cumulative −0.8k* (below pre-pandemic trend!). The "deaths of despair" hypothesis fails the data test for this cohort: pre-pandemic external causes were already rising fast in 45-64 men (3421 → 4005 in five years); post-pandemic observed sits *below* projection. The male-vs-female gap is concentrated in circulatory specifically (M ~6.1k vs F ~2.3k); digestive excess is roughly equal in absolute terms (M ~2.5k vs F ~2.1k). **The post-2022 elevation in middle-aged men is delayed-cardiovascular-care plus increased-pandemic-drinking, not a mental-health crisis.**
+
+![Cause decomposition for Male 45-64](figures/cause_decomposition.png)
+
 ## Continuous refresh
 
 [`.github/workflows/refresh-live-forecast.yml`](.github/workflows/refresh-live-forecast.yml) re-runs the live forecast on a monthly schedule (the 25th, 02:00 UTC — a day after ONS typically publishes the new edition). The workflow:
@@ -251,4 +274,5 @@ poetry run mypy src
 
 ## License
 
-ONS data is subject to the [Open Government Licence](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) unless otherwise stated. The Python code is provided as a portfolio example.
+- **Code** — [MIT](LICENSE).
+- **Data** — the cached ONS workbooks and derived CSVs are republications of public ONS datasets released under the [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/). Attribution: *Source: Office for National Statistics licensed under the Open Government Licence v.3.0*.

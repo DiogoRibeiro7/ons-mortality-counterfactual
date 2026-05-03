@@ -31,6 +31,7 @@ DEATHS_CSV = DATA_DIR / "england_wales_monthly_deaths.csv"
 REGIONAL_CSV = DATA_DIR / "england_wales_regional_monthly_deaths.csv"
 AGE_CSV = DATA_DIR / "england_wales_weekly_age_deaths.csv"
 SEX_AGE_CSV = DATA_DIR / "england_wales_weekly_sex_age_deaths.csv"
+CAUSE_CSV = DATA_DIR / "england_wales_cause_by_sex_age.csv"
 
 PANDEMIC_ONSET = pd.Timestamp("2020-03-01")
 DPI = 150
@@ -754,10 +755,163 @@ def render_trend_specification() -> None:
 
 
 # ---------------------------------------------------------------------------
+# Figure 9 — Cause decomposition for Male 45-64 (notebook 12)
+# ---------------------------------------------------------------------------
+
+
+def render_cause_decomposition() -> None:
+    """Two-panel chart: M 45-64 stacked excess by year + M-vs-F by group."""
+    if not CAUSE_CSV.exists():
+        print(f"Skipping cause figure — {CAUSE_CSV.name} not found.")
+        return
+
+    raw = pd.read_csv(CAUSE_CSV)
+    all_causes_code = "A00 to R99 U00 to Y89"
+    deaths = raw[
+        (raw["place"] == "All places")
+        & (raw["icd_chapter_code"] != all_causes_code)
+    ].copy()
+
+    pre_years = list(range(2015, 2020))
+    post_years = list(range(2020, 2025))
+
+    def fit(sex: str, age: str) -> pd.DataFrame:
+        sub = deaths[(deaths["sex"] == sex) & (deaths["age_band"] == age)]
+        pivot = (
+            sub.pivot_table(
+                index="icd_chapter_name", columns="year",
+                values="deaths", fill_value=0,
+            ).astype(int)
+        )
+        rows: list[dict] = []
+        x_pre = np.array([y - pre_years[0] for y in pre_years], dtype=float)
+        for chapter in pivot.index:
+            if pivot.loc[chapter].sum() == 0:
+                continue
+            y_train = np.array(
+                [pivot.loc[chapter, y] for y in pre_years], dtype=float,
+            )
+            if y_train.std() == 0:
+                slope, intercept = 0.0, float(y_train.mean())
+            else:
+                slope, intercept = np.polyfit(x_pre, y_train, 1)
+            for year in post_years:
+                projected = intercept + slope * (year - pre_years[0])
+                observed = int(pivot.loc[chapter, year])
+                rows.append({
+                    "chapter": chapter, "year": year,
+                    "excess": observed - projected,
+                })
+        return pd.DataFrame(rows)
+
+    m_df = fit("Male", "45-64")
+    f_df = fit("Female", "45-64")
+
+    groups = [
+        ("COVID-19 (U codes)",
+         ["Chapter 22 - Codes for special purposes"], "#d62728"),
+        ("Circulatory (heart, stroke)",
+         ["Chapter 9 - Diseases of the circulatory system"], "#1f77b4"),
+        ("Digestive (incl. alcohol-related)",
+         ["Chapter 11 - Diseases of the digestive system"], "#2ca02c"),
+        ("Neoplasms (cancer)",
+         ["Chapter 2 - Neoplasms"], "#9467bd"),
+        ("External (suicide, drugs, accidents)",
+         ["Chapter 20 - External causes of morbidity and mortality"], "#ff7f0e"),
+    ]
+
+    def grouped(df: pd.DataFrame, year: int) -> dict[str, float]:
+        out: dict[str, float] = {}
+        accounted: set[str] = set()
+        for label, chaps, _ in groups:
+            v = df[
+                (df["year"] == year) & (df["chapter"].isin(chaps))
+            ]["excess"].sum()
+            out[label] = float(v)
+            accounted |= set(chaps)
+        out["Other"] = float(
+            df[(df["year"] == year) & (~df["chapter"].isin(accounted))]
+            ["excess"].sum()
+        )
+        return out
+
+    fig, (ax_l, ax_r) = plt.subplots(
+        1, 2, figsize=(14, 5.6), gridspec_kw={"width_ratios": [1.0, 1.05]},
+    )
+    labels_with_other = [g[0] for g in groups] + ["Other"]
+    colors_with_other = [g[2] for g in groups] + ["#999999"]
+
+    bottoms_pos = np.zeros(len(post_years))
+    bottoms_neg = np.zeros(len(post_years))
+    seen_labels: set[str] = set()
+    for label, color in zip(labels_with_other, colors_with_other, strict=True):
+        vals = np.array(
+            [grouped(m_df, yr)[label] for yr in post_years], dtype=float,
+        )
+        for j, v in enumerate(vals):
+            kw = {"label": label} if label not in seen_labels else {}
+            if v >= 0:
+                ax_l.bar(post_years[j], v, bottom=bottoms_pos[j], color=color,
+                         edgecolor="white", linewidth=0.4, **kw)
+                bottoms_pos[j] += v
+            else:
+                ax_l.bar(post_years[j], v, bottom=bottoms_neg[j], color=color,
+                         edgecolor="white", linewidth=0.4, **kw)
+                bottoms_neg[j] += v
+            seen_labels.add(label)
+    ax_l.axhline(0, color="black", linewidth=0.7)
+    ax_l.set_xticks(post_years)
+    ax_l.set_ylabel("annual excess deaths (vs pre-pandemic linear projection)")
+    ax_l.set_title(
+        "Male 45-64: COVID dominates 2020-21,\nCVD persists post-2022",
+        loc="left", fontweight="bold", fontsize=13,
+    )
+    ax_l.legend(loc="upper right", fontsize=8, ncol=1)
+    ax_l.grid(alpha=0.25, axis="y")
+
+    group_labels = [g[0] for g in groups]
+    m_totals = []
+    f_totals = []
+    for _, chaps, _ in groups:
+        m_totals.append(float(m_df[m_df["chapter"].isin(chaps)]["excess"].sum()))
+        f_totals.append(float(f_df[f_df["chapter"].isin(chaps)]["excess"].sum()))
+
+    y_pos = np.arange(len(group_labels))
+    width = 0.4
+    ax_r.barh(y_pos - width / 2, m_totals, width,
+              color="#1f77b4", label="Male", alpha=0.85)
+    ax_r.barh(y_pos + width / 2, f_totals, width,
+              color="#d62728", label="Female", alpha=0.85)
+    ax_r.axvline(0, color="black", linewidth=0.7)
+    ax_r.set_yticks(y_pos)
+    ax_r.set_yticklabels(group_labels, fontsize=10)
+    ax_r.invert_yaxis()
+    ax_r.set_xlabel("cumulative excess deaths 2020-2024")
+    ax_r.set_title(
+        "45-64 cumulative excess by cause group: Male vs Female",
+        loc="left", fontweight="bold", fontsize=13,
+    )
+    ax_r.grid(alpha=0.25, axis="x")
+    ax_r.legend(loc="lower right")
+
+    fig.suptitle(
+        "The 45-64 male residual is cardiovascular + alcohol-related, "
+        "not drugs/suicide",
+        fontsize=15, fontweight="bold", x=0.0, ha="left",
+    )
+    fig.tight_layout()
+    fig.savefig(
+        FIGURES_DIR / "cause_decomposition.png",
+        dpi=DPI, bbox_inches="tight",
+    )
+    plt.close(fig)
+
+
+# ---------------------------------------------------------------------------
 
 
 def main() -> None:
-    """Render all eight README figures."""
+    """Render all nine README figures."""
     FIGURES_DIR.mkdir(parents=True, exist_ok=True)
     render_headline_counterfactual()
     print("Saved figures/england_wales_counterfactual.png")
@@ -775,6 +929,8 @@ def main() -> None:
     print("Saved figures/backtest_calibration.png")
     render_trend_specification()
     print("Saved figures/trend_specification.png")
+    render_cause_decomposition()
+    print("Saved figures/cause_decomposition.png")
 
 
 if __name__ == "__main__":

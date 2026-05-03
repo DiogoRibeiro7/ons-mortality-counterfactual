@@ -22,6 +22,7 @@ from ons_mortality.ons import (
     ONS_WEEKLY_DATASET_URL,
     ONSFile,
     discover_ons_files,
+    download_file,
     iter_downloaded_files,
 )
 from ons_mortality.parser import (
@@ -1848,3 +1849,107 @@ def fetch_weekly_sex_age_deaths(
     ].sort_values(["sex", "age_band", "week_ending"]).reset_index(drop=True)
 
     return output
+
+
+# ---------------------------------------------------------------------------
+# Annual deaths by cause × sex × age (ONS Series DR reference table)
+# ---------------------------------------------------------------------------
+
+# The 2024 edition of the ONS "Deaths registered in England and Wales: Series
+# DR" reference tables ships a single Table_5 covering 2015-2024 with
+# ICD-10 chapter × sex × age × place breakdowns. Earlier annual editions
+# only contain the reporting year, so we point at the 2024 file directly.
+SERIES_DR_2024_URL = (
+    "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/"
+    "birthsdeathsandmarriages/deaths/datasets/"
+    "deathsregisteredinenglandandwalesseriesdrreferencetables/"
+    "2024/annualdeaths2024.xlsx"
+)
+SERIES_DR_2024_FILENAME = "annualdeaths2024.xlsx"
+
+# Map ONS Series DR age labels to our canonical age bands. The Series DR
+# table reports adult bands at the same boundaries as our weekly canonical
+# bands, plus several finer breakdowns under age 5 that don't align cleanly
+# with our "Under 1" / "1-14" — we drop those rows downstream.
+SERIES_DR_AGE_MAP: dict[str, str] = {
+    "15 to 44": "15-44",
+    "45 to 64": "45-64",
+    "65 to 74": "65-74",
+    "75 to 84": "75-84",
+    "85 years and over": "85+",
+}
+
+
+def fetch_cause_by_sex_age(
+    raw_dir: Path,
+    overwrite: bool = False,
+) -> pd.DataFrame:
+    """Download the ONS Series DR reference table and return a tidy long DataFrame.
+
+    The 2024 edition of the dataset (the file ``annualdeaths2024.xlsx``) is
+    the only one that ships a multi-year cause × sex × age × place table —
+    earlier annual editions report only their reporting year. We download
+    that single file (cached under ``raw_dir``), parse Table_5, and emit a
+    long DataFrame restricted to the five adult age bands we model
+    elsewhere in the repo.
+
+    Returns
+    -------
+    pd.DataFrame
+        Columns: ``year`` (2015-2024), ``sex`` (All people / Male / Female),
+        ``age_band`` (15-44, 45-64, 65-74, 75-84, 85+), ``icd_chapter_code``,
+        ``icd_chapter_name``, ``place`` (10 categories incl. "All places"),
+        ``deaths``.
+    """
+    raw_dir.mkdir(parents=True, exist_ok=True)
+    local_path = raw_dir / SERIES_DR_2024_FILENAME
+    file = ONSFile(
+        edition_year=2024,
+        url=SERIES_DR_2024_URL,
+        filename=SERIES_DR_2024_FILENAME,
+        is_final=True,
+    )
+    # download_file prefixes "edition_year_" to the filename; keep parity by
+    # passing a directory the helper writes into and then reading from there.
+    download_file(file=file, output_dir=raw_dir, overwrite=overwrite)
+    actual_path = raw_dir / f"2024_{SERIES_DR_2024_FILENAME}"
+    if not actual_path.exists():
+        # Some environments pre-cache directly under the canonical name;
+        # fall back to that if present.
+        actual_path = local_path
+
+    df = pd.read_excel(actual_path, sheet_name="Table_5", skiprows=4)
+    df = df.rename(columns={
+        "Year of registration": "year",
+        "Sex": "sex",
+        "Age group": "age_band_raw",
+        "ICD-10 chapter codes": "icd_chapter_code",
+        "ICD-10 chapter name": "icd_chapter_name",
+        "Place of death": "place",
+        "Number of deaths": "deaths",
+    })
+
+    df["age_band"] = df["age_band_raw"].map(SERIES_DR_AGE_MAP)
+    df = df.dropna(subset=["age_band"]).copy()
+    df["year"] = pd.to_numeric(df["year"], errors="coerce").astype("Int64")
+    df = df.dropna(subset=["year"]).copy()
+    df["year"] = df["year"].astype(int)
+    df["deaths"] = pd.to_numeric(df["deaths"], errors="coerce").fillna(0).astype(int)
+    # ONS embeds a U+201A (SINGLE LOW-9 QUOTATION MARK) as a separator
+    # inside multi-range chapter labels — collapse it (and any U+FFFD
+    # replacement character that occasionally appears) into a single space.
+    junk_chars = "‚�"
+    for col in ("icd_chapter_code", "icd_chapter_name"):
+        cleaned = df[col].astype(str)
+        for ch in junk_chars:
+            cleaned = cleaned.str.replace(ch, " ", regex=False)
+        df[col] = cleaned.str.replace(r"\s+", " ", regex=True).str.strip()
+
+    return df[
+        [
+            "year", "sex", "age_band", "icd_chapter_code",
+            "icd_chapter_name", "place", "deaths",
+        ]
+    ].sort_values(
+        ["year", "sex", "age_band", "icd_chapter_code", "place"]
+    ).reset_index(drop=True)

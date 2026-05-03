@@ -3,6 +3,7 @@ name = "ons-mortality-counterfactual"
 version = "0.1.0"
 description = "Download ONS monthly mortality data into MySQL and build a Bayesian counterfactual chart."
 authors = ["Diogo Ribeiro"]
+license = "MIT"
 readme = "README.md"
 packages = [{ include = "ons_mortality", from = "src" }]
 

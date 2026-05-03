@@ -103,6 +103,18 @@ jobs:
             --inplace \
             notebooks/11_trend_specification.ipynb
 
+      - name: Fetch latest ONS Series DR cause-by-sex-age data
+        run: |
+          ons-mortality fetch-cause-by-sex-age
+
+      - name: Re-execute notebook 12 (cause decomposition)
+        run: |
+          jupyter nbconvert \
+            --to notebook \
+            --execute \
+            --inplace \
+            notebooks/12_cause_decomposition.ipynb
+
       - name: Re-render the README figures
         run: |
           python scripts/render_readme_figures.py
@@ -116,13 +128,15 @@ jobs:
             data/processed/england_wales_monthly_deaths.csv \
             data/processed/england_wales_weekly_age_deaths.csv \
             data/processed/england_wales_weekly_sex_age_deaths.csv \
+            data/processed/england_wales_cause_by_sex_age.csv \
             figures/ \
             notebooks/01_counterfactual_mortality.ipynb \
             notebooks/07_live_forecast.ipynb \
             notebooks/08_age_band_excess.ipynb \
             notebooks/09_sex_age_excess.ipynb \
             notebooks/10_backtest_calibration.ipynb \
-            notebooks/11_trend_specification.ipynb
+            notebooks/11_trend_specification.ipynb \
+            notebooks/12_cause_decomposition.ipynb
 
           if git diff --staged --quiet; then
             echo "No changes from this refresh."

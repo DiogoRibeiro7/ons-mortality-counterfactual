@@ -20,6 +20,7 @@ from ons_mortality.database import (
     read_national_monthly_deaths,
 )
 from ons_mortality.fetch import (
+    fetch_cause_by_sex_age,
     fetch_national_monthly_deaths,
     fetch_regional_monthly_deaths,
     fetch_weekly_age_deaths,
@@ -188,6 +189,24 @@ def handle_fetch_weekly_ages(args: argparse.Namespace) -> None:
     n_bands = df['age_band'].nunique()
     print(
         f"Wrote {len(df):,} rows across {n_bands} age bands ({span}) to {csv_path}"
+    )
+
+
+def handle_fetch_cause_by_sex_age(args: argparse.Namespace) -> None:
+    """Download ONS Series DR cause × sex × age annual reference table."""
+    paths = load_path_config()
+    raw_dir = Path(args.raw_dir) if args.raw_dir else paths.raw_dir / "cause"
+    csv_path = Path(args.output)
+    csv_path.parent.mkdir(parents=True, exist_ok=True)
+
+    df = fetch_cause_by_sex_age(raw_dir=raw_dir, overwrite=args.overwrite)
+    df.to_csv(csv_path, index=False)
+
+    n_years = df["year"].nunique()
+    n_chapters = df["icd_chapter_code"].nunique()
+    print(
+        f"Wrote {len(df):,} rows ({n_years} years × 3 sex × 5 age bands × "
+        f"{n_chapters} ICD chapters × 10 places) to {csv_path}"
     )
 
 
@@ -476,6 +495,34 @@ def build_parser() -> argparse.ArgumentParser:
         help="Force re-download even when cached.",
     )
     fetch_sex_ages_parser.set_defaults(func=handle_fetch_weekly_sex_ages)
+
+    fetch_cause_parser = subparsers.add_parser(
+        "fetch-cause-by-sex-age",
+        help=(
+            "Download the ONS Series DR reference table (2015-2024) and "
+            "write a tidy long CSV of deaths by ICD-10 chapter × sex × age "
+            "× place to disk."
+        ),
+    )
+    fetch_cause_parser.add_argument(
+        "--output",
+        default="data/processed/england_wales_cause_by_sex_age.csv",
+        help="Output CSV path.",
+    )
+    fetch_cause_parser.add_argument(
+        "--raw-dir",
+        default=None,
+        help=(
+            "Override the raw download cache directory "
+            "(defaults to data/raw/cause)."
+        ),
+    )
+    fetch_cause_parser.add_argument(
+        "--overwrite",
+        action="store_true",
+        help="Force re-download even when cached.",
+    )
+    fetch_cause_parser.set_defaults(func=handle_fetch_cause_by_sex_age)
 
     run_parser = subparsers.add_parser(
         "run",
