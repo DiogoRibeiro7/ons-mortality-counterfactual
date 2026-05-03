@@ -10,20 +10,25 @@ packages = [{ include = "ons_mortality", from = "src" }]
 [tool.poetry.dependencies]
 python = ">=3.10,<3.14"
 beautifulsoup4 = "^4.12.3"
-cryptography = "^42.0.0"
+# >=46 closes 4 CVEs flagged in 42.x (DNS-name constraint, OpenSSL bundled
+# wheels, subgroup-validation). Permitting 47.x keeps Dependabot quiet on
+# its next bump cycle.
+cryptography = ">=46.0.0,<48.0.0"
 matplotlib = "^3.8.0"
 numpy = "^1.26.0"
 openpyxl = "^3.1.5"
 pandas = "^2.2.0"
 pymysql = "^1.1.1"
 python-dotenv = "^1.0.1"
-requests = "^2.32.0"
+# >=2.33 closes the .netrc-leak and zip-extract CVEs in 2.32.x.
+requests = "^2.33.0"
 sqlalchemy = "^2.0.30"
 statsmodels = "^0.14"
 xlrd = "^2.0.1"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^8.2.0"
+# >=9.0.3 closes the tmpdir handling vuln (GHSA-6w46-j5rx-g56g) in 8.x.
+pytest = ">=9.0.3,<10"
 ruff = "^0.5.0"
 mypy = "^1.10.0"
 pandas-stubs = "^2.2.2.240603"
