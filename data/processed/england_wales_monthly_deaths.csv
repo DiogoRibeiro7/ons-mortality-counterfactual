@@ -239,7 +239,8 @@ month_date,observed_deaths,edition_year,is_final,source_filename
 2025-10-01,49011,2025,False,2025_monthlydeathsdecember2025.xlsx
 2025-11-01,45284,2025,False,2025_monthlydeathsdecember2025.xlsx
 2025-12-01,49918,2025,False,2025_monthlydeathsdecember2025.xlsx
-2026-01-01,57956,2026,False,2026_monthlydeathsapril2026.xlsx
-2026-02-01,48111,2026,False,2026_monthlydeathsapril2026.xlsx
-2026-03-01,48722,2026,False,2026_monthlydeathsapril2026.xlsx
-2026-04-01,46648,2026,False,2026_monthlydeathsapril2026.xlsx
+2026-01-01,57954,2026,False,2026_monthlydeathsmay2026.xlsx
+2026-02-01,48107,2026,False,2026_monthlydeathsmay2026.xlsx
+2026-03-01,48718,2026,False,2026_monthlydeathsmay2026.xlsx
+2026-04-01,46650,2026,False,2026_monthlydeathsmay2026.xlsx
+2026-05-01,41971,2026,False,2026_monthlydeathsmay2026.xlsx
