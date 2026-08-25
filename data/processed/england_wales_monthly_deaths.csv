@@ -239,9 +239,10 @@ month_date,observed_deaths,edition_year,is_final,source_filename
 2025-10-01,49011,2025,True,2025_monthlydeathsdecember2025finalv2.xlsx
 2025-11-01,45284,2025,True,2025_monthlydeathsdecember2025finalv2.xlsx
 2025-12-01,49918,2025,True,2025_monthlydeathsdecember2025finalv2.xlsx
-2026-01-01,57954,2026,False,2026_monthlydeathsjune2026.xlsx
-2026-02-01,48107,2026,False,2026_monthlydeathsjune2026.xlsx
-2026-03-01,48718,2026,False,2026_monthlydeathsjune2026.xlsx
-2026-04-01,46649,2026,False,2026_monthlydeathsjune2026.xlsx
-2026-05-01,41974,2026,False,2026_monthlydeathsjune2026.xlsx
-2026-06-01,46688,2026,False,2026_monthlydeathsjune2026.xlsx
+2026-01-01,57954,2026,False,2026_monthlydeathsjuly2026.xlsx
+2026-02-01,48105,2026,False,2026_monthlydeathsjuly2026.xlsx
+2026-03-01,48717,2026,False,2026_monthlydeathsjuly2026.xlsx
+2026-04-01,46649,2026,False,2026_monthlydeathsjuly2026.xlsx
+2026-05-01,41975,2026,False,2026_monthlydeathsjuly2026.xlsx
+2026-06-01,46686,2026,False,2026_monthlydeathsjuly2026.xlsx
+2026-07-01,47600,2026,False,2026_monthlydeathsjuly2026.xlsx

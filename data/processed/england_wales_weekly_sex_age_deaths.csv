@@ -833,34 +833,38 @@ week_ending,sex,age_band,observed_deaths,edition_year,is_final,source_filename
 2025-12-12,All people,1-14,21,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-19,All people,1-14,16,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-26,All people,1-14,11,2025,False,2025_weeklydeathsweek522025.xlsx
-2026-01-02,All people,1-14,13,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-09,All people,1-14,20,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-16,All people,1-14,14,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-23,All people,1-14,26,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-30,All people,1-14,17,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-06,All people,1-14,14,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-13,All people,1-14,20,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-20,All people,1-14,17,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-27,All people,1-14,21,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-06,All people,1-14,20,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-13,All people,1-14,19,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-20,All people,1-14,12,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-27,All people,1-14,18,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-03,All people,1-14,14,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-10,All people,1-14,17,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-17,All people,1-14,11,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-24,All people,1-14,20,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-01,All people,1-14,24,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-08,All people,1-14,18,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-15,All people,1-14,10,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-22,All people,1-14,23,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-29,All people,1-14,14,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-05,All people,1-14,16,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-12,All people,1-14,21,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-19,All people,1-14,19,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-26,All people,1-14,24,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-03,All people,1-14,17,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-10,All people,1-14,19,2026,False,2026_weeklydeathsweek282026.xlsx
+2026-01-02,All people,1-14,13,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-09,All people,1-14,20,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-16,All people,1-14,14,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-23,All people,1-14,26,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-30,All people,1-14,17,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-06,All people,1-14,14,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-13,All people,1-14,20,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-20,All people,1-14,17,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-27,All people,1-14,21,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-06,All people,1-14,20,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-13,All people,1-14,19,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-20,All people,1-14,12,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-27,All people,1-14,18,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-03,All people,1-14,14,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-10,All people,1-14,17,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-17,All people,1-14,11,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-24,All people,1-14,20,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-01,All people,1-14,24,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-08,All people,1-14,18,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-15,All people,1-14,10,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-22,All people,1-14,23,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-29,All people,1-14,14,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-05,All people,1-14,16,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-12,All people,1-14,21,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-19,All people,1-14,19,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-26,All people,1-14,24,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-03,All people,1-14,18,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-10,All people,1-14,19,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-17,All people,1-14,9,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-24,All people,1-14,19,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-31,All people,1-14,13,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-08-07,All people,1-14,18,2026,False,2026_weeklydeathsweek322026.xlsx
 2010-01-08,All people,15-44,299,2010,False,2010_publishedweek2010.xls
 2010-01-15,All people,15-44,331,2010,False,2010_publishedweek2010.xls
 2010-01-22,All people,15-44,347,2010,False,2010_publishedweek2010.xls
@@ -1695,34 +1699,38 @@ week_ending,sex,age_band,observed_deaths,edition_year,is_final,source_filename
 2025-12-12,All people,15-44,342,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-19,All people,15-44,332,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-26,All people,15-44,159,2025,False,2025_weeklydeathsweek522025.xlsx
-2026-01-02,All people,15-44,177,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-09,All people,15-44,299,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-16,All people,15-44,295,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-23,All people,15-44,333,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-30,All people,15-44,315,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-06,All people,15-44,330,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-13,All people,15-44,311,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-20,All people,15-44,325,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-27,All people,15-44,295,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-06,All people,15-44,319,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-13,All people,15-44,311,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-20,All people,15-44,306,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-27,All people,15-44,345,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-03,All people,15-44,264,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-10,All people,15-44,251,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-17,All people,15-44,319,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-24,All people,15-44,335,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-01,All people,15-44,333,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-08,All people,15-44,276,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-15,All people,15-44,332,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-22,All people,15-44,265,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-29,All people,15-44,225,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-05,All people,15-44,292,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-12,All people,15-44,313,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-19,All people,15-44,304,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-26,All people,15-44,266,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-03,All people,15-44,275,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-10,All people,15-44,295,2026,False,2026_weeklydeathsweek282026.xlsx
+2026-01-02,All people,15-44,177,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-09,All people,15-44,299,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-16,All people,15-44,295,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-23,All people,15-44,333,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-30,All people,15-44,315,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-06,All people,15-44,330,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-13,All people,15-44,311,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-20,All people,15-44,325,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-27,All people,15-44,295,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-06,All people,15-44,319,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-13,All people,15-44,311,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-20,All people,15-44,306,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-27,All people,15-44,345,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-03,All people,15-44,264,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-10,All people,15-44,251,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-17,All people,15-44,319,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-24,All people,15-44,335,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-01,All people,15-44,333,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-08,All people,15-44,276,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-15,All people,15-44,332,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-22,All people,15-44,264,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-29,All people,15-44,225,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-05,All people,15-44,293,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-12,All people,15-44,313,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-19,All people,15-44,304,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-26,All people,15-44,266,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-03,All people,15-44,276,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-10,All people,15-44,296,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-17,All people,15-44,270,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-24,All people,15-44,292,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-31,All people,15-44,320,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-08-07,All people,15-44,299,2026,False,2026_weeklydeathsweek322026.xlsx
 2010-01-08,All people,45-64,1570,2010,False,2010_publishedweek2010.xls
 2010-01-15,All people,45-64,1465,2010,False,2010_publishedweek2010.xls
 2010-01-22,All people,45-64,1392,2010,False,2010_publishedweek2010.xls
@@ -2557,34 +2565,38 @@ week_ending,sex,age_band,observed_deaths,edition_year,is_final,source_filename
 2025-12-12,All people,45-64,1327,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-19,All people,45-64,1401,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-26,All people,45-64,809,2025,False,2025_weeklydeathsweek522025.xlsx
-2026-01-02,All people,45-64,1058,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-09,All people,45-64,1548,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-16,All people,45-64,1575,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-23,All people,45-64,1490,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-30,All people,45-64,1498,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-06,All people,45-64,1383,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-13,All people,45-64,1385,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-20,All people,45-64,1288,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-27,All people,45-64,1299,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-06,All people,45-64,1327,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-13,All people,45-64,1348,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-20,All people,45-64,1325,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-27,All people,45-64,1253,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-03,All people,45-64,977,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-10,All people,45-64,1064,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-17,All people,45-64,1332,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-24,All people,45-64,1405,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-01,All people,45-64,1416,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-08,All people,45-64,1063,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-15,All people,45-64,1323,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-22,All people,45-64,1293,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-29,All people,45-64,1025,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-05,All people,45-64,1324,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-12,All people,45-64,1407,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-19,All people,45-64,1307,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-26,All people,45-64,1134,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-03,All people,45-64,1159,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-10,All people,45-64,1249,2026,False,2026_weeklydeathsweek282026.xlsx
+2026-01-02,All people,45-64,1058,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-09,All people,45-64,1548,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-16,All people,45-64,1575,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-23,All people,45-64,1490,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-30,All people,45-64,1498,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-06,All people,45-64,1383,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-13,All people,45-64,1385,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-20,All people,45-64,1288,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-27,All people,45-64,1299,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-06,All people,45-64,1327,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-13,All people,45-64,1348,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-20,All people,45-64,1325,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-27,All people,45-64,1253,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-03,All people,45-64,977,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-10,All people,45-64,1064,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-17,All people,45-64,1332,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-24,All people,45-64,1405,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-01,All people,45-64,1416,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-08,All people,45-64,1063,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-15,All people,45-64,1323,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-22,All people,45-64,1293,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-29,All people,45-64,1025,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-05,All people,45-64,1324,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-12,All people,45-64,1406,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-19,All people,45-64,1308,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-26,All people,45-64,1134,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-03,All people,45-64,1158,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-10,All people,45-64,1251,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-17,All people,45-64,1289,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-24,All people,45-64,1256,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-31,All people,45-64,1254,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-08-07,All people,45-64,1228,2026,False,2026_weeklydeathsweek322026.xlsx
 2010-01-08,All people,65-74,2049,2010,False,2010_publishedweek2010.xls
 2010-01-15,All people,65-74,1860,2010,False,2010_publishedweek2010.xls
 2010-01-22,All people,65-74,1781,2010,False,2010_publishedweek2010.xls
@@ -3419,34 +3431,38 @@ week_ending,sex,age_band,observed_deaths,edition_year,is_final,source_filename
 2025-12-12,All people,65-74,1707,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-19,All people,65-74,1755,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-26,All people,65-74,1069,2025,False,2025_weeklydeathsweek522025.xlsx
-2026-01-02,All people,65-74,1438,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-09,All people,65-74,1975,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-16,All people,65-74,2028,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-23,All people,65-74,1902,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-30,All people,65-74,1901,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-06,All people,65-74,1844,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-13,All people,65-74,1781,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-20,All people,65-74,1677,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-27,All people,65-74,1710,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-06,All people,65-74,1724,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-13,All people,65-74,1657,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-20,All people,65-74,1624,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-27,All people,65-74,1597,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-03,All people,65-74,1476,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-10,All people,65-74,1388,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-17,All people,65-74,1736,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-24,All people,65-74,1738,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-01,All people,65-74,1695,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-08,All people,65-74,1378,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-15,All people,65-74,1672,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-22,All people,65-74,1672,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-29,All people,65-74,1312,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-05,All people,65-74,1757,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-12,All people,65-74,1717,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-19,All people,65-74,1610,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-26,All people,65-74,1490,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-03,All people,65-74,1511,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-10,All people,65-74,1628,2026,False,2026_weeklydeathsweek282026.xlsx
+2026-01-02,All people,65-74,1438,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-09,All people,65-74,1975,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-16,All people,65-74,2028,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-23,All people,65-74,1902,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-30,All people,65-74,1901,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-06,All people,65-74,1844,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-13,All people,65-74,1781,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-20,All people,65-74,1677,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-27,All people,65-74,1710,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-06,All people,65-74,1724,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-13,All people,65-74,1657,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-20,All people,65-74,1624,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-27,All people,65-74,1597,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-03,All people,65-74,1476,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-10,All people,65-74,1388,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-17,All people,65-74,1736,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-24,All people,65-74,1738,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-01,All people,65-74,1695,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-08,All people,65-74,1378,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-15,All people,65-74,1672,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-22,All people,65-74,1672,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-29,All people,65-74,1312,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-05,All people,65-74,1757,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-12,All people,65-74,1717,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-19,All people,65-74,1610,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-26,All people,65-74,1489,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-03,All people,65-74,1511,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-10,All people,65-74,1628,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-17,All people,65-74,1596,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-24,All people,65-74,1559,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-31,All people,65-74,1509,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-08-07,All people,65-74,1516,2026,False,2026_weeklydeathsweek322026.xlsx
 2010-01-08,All people,75-84,3952,2010,False,2010_publishedweek2010.xls
 2010-01-15,All people,75-84,3883,2010,False,2010_publishedweek2010.xls
 2010-01-22,All people,75-84,3501,2010,False,2010_publishedweek2010.xls
@@ -4281,34 +4297,38 @@ week_ending,sex,age_band,observed_deaths,edition_year,is_final,source_filename
 2025-12-12,All people,75-84,3448,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-19,All people,75-84,3706,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-26,All people,75-84,2316,2025,False,2025_weeklydeathsweek522025.xlsx
-2026-01-02,All people,75-84,2970,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-09,All people,75-84,4241,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-16,All people,75-84,4356,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-23,All people,75-84,4154,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-30,All people,75-84,3936,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-06,All people,75-84,3760,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-13,All people,75-84,3678,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-20,All people,75-84,3472,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-27,All people,75-84,3457,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-06,All people,75-84,3440,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-13,All people,75-84,3419,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-20,All people,75-84,3343,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-27,All people,75-84,3219,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-03,All people,75-84,2787,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-10,All people,75-84,2824,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-17,All people,75-84,3648,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-24,All people,75-84,3543,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-01,All people,75-84,3505,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-08,All people,75-84,2659,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-15,All people,75-84,3361,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-22,All people,75-84,3354,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-29,All people,75-84,2620,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-05,All people,75-84,3476,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-12,All people,75-84,3367,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-19,All people,75-84,3183,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-26,All people,75-84,2968,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-03,All people,75-84,3005,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-10,All people,75-84,3304,2026,False,2026_weeklydeathsweek282026.xlsx
+2026-01-02,All people,75-84,2970,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-09,All people,75-84,4241,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-16,All people,75-84,4356,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-23,All people,75-84,4154,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-30,All people,75-84,3936,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-06,All people,75-84,3760,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-13,All people,75-84,3677,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-20,All people,75-84,3472,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-27,All people,75-84,3457,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-06,All people,75-84,3440,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-13,All people,75-84,3419,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-20,All people,75-84,3343,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-27,All people,75-84,3219,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-03,All people,75-84,2787,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-10,All people,75-84,2824,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-17,All people,75-84,3648,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-24,All people,75-84,3543,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-01,All people,75-84,3505,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-08,All people,75-84,2659,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-15,All people,75-84,3361,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-22,All people,75-84,3354,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-29,All people,75-84,2620,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-05,All people,75-84,3476,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-12,All people,75-84,3368,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-19,All people,75-84,3181,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-26,All people,75-84,2969,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-03,All people,75-84,3005,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-10,All people,75-84,3306,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-17,All people,75-84,3223,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-24,All people,75-84,3071,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-31,All people,75-84,2922,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-08-07,All people,75-84,2926,2026,False,2026_weeklydeathsweek322026.xlsx
 2010-01-08,All people,85+,5012,2010,False,2010_publishedweek2010.xls
 2010-01-15,All people,85+,4902,2010,False,2010_publishedweek2010.xls
 2010-01-22,All people,85+,4654,2010,False,2010_publishedweek2010.xls
@@ -5143,34 +5163,38 @@ week_ending,sex,age_band,observed_deaths,edition_year,is_final,source_filename
 2025-12-12,All people,85+,2140,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-19,All people,85+,2229,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-26,All people,85+,1383,2025,False,2025_weeklydeathsweek522025.xlsx
-2026-01-02,All people,85+,1859,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-09,All people,85+,2624,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-16,All people,85+,2595,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-23,All people,85+,2513,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-30,All people,85+,2406,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-06,All people,85+,2231,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-13,All people,85+,2214,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-20,All people,85+,2133,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-27,All people,85+,2141,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-06,All people,85+,1998,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-13,All people,85+,2060,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-20,All people,85+,1946,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-27,All people,85+,1805,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-03,All people,85+,1632,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-10,All people,85+,1557,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-17,All people,85+,2193,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-24,All people,85+,2096,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-01,All people,85+,2015,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-08,All people,85+,1589,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-15,All people,85+,1897,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-22,All people,85+,1912,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-29,All people,85+,1537,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-05,All people,85+,2008,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-12,All people,85+,1992,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-19,All people,85+,1743,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-26,All people,85+,1725,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-03,All people,85+,1825,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-10,All people,85+,1909,2026,False,2026_weeklydeathsweek282026.xlsx
+2026-01-02,All people,85+,1859,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-09,All people,85+,2624,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-16,All people,85+,2595,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-23,All people,85+,2513,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-30,All people,85+,2406,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-06,All people,85+,2231,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-13,All people,85+,2214,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-20,All people,85+,2133,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-27,All people,85+,2141,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-06,All people,85+,1998,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-13,All people,85+,2060,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-20,All people,85+,1946,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-27,All people,85+,1805,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-03,All people,85+,1632,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-10,All people,85+,1557,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-17,All people,85+,2193,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-24,All people,85+,2096,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-01,All people,85+,2015,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-08,All people,85+,1589,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-15,All people,85+,1897,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-22,All people,85+,1912,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-29,All people,85+,1537,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-05,All people,85+,2008,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-12,All people,85+,1992,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-19,All people,85+,1743,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-26,All people,85+,1725,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-03,All people,85+,1826,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-10,All people,85+,1909,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-17,All people,85+,1813,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-24,All people,85+,1783,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-31,All people,85+,1725,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-08-07,All people,85+,1718,2026,False,2026_weeklydeathsweek322026.xlsx
 2010-01-08,All people,Under 1,61,2010,False,2010_publishedweek2010.xls
 2010-01-15,All people,Under 1,69,2010,False,2010_publishedweek2010.xls
 2010-01-22,All people,Under 1,66,2010,False,2010_publishedweek2010.xls
@@ -6005,34 +6029,38 @@ week_ending,sex,age_band,observed_deaths,edition_year,is_final,source_filename
 2025-12-12,All people,Under 1,45,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-19,All people,Under 1,52,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-26,All people,Under 1,32,2025,False,2025_weeklydeathsweek522025.xlsx
-2026-01-02,All people,Under 1,37,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-09,All people,Under 1,58,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-16,All people,Under 1,55,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-23,All people,Under 1,45,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-30,All people,Under 1,58,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-06,All people,Under 1,43,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-13,All people,Under 1,45,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-20,All people,Under 1,53,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-27,All people,Under 1,36,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-06,All people,Under 1,42,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-13,All people,Under 1,54,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-20,All people,Under 1,44,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-27,All people,Under 1,56,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-03,All people,Under 1,42,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-10,All people,Under 1,45,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-17,All people,Under 1,58,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-24,All people,Under 1,45,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-01,All people,Under 1,64,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-08,All people,Under 1,36,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-15,All people,Under 1,54,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-22,All people,Under 1,46,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-29,All people,Under 1,41,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-05,All people,Under 1,51,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-12,All people,Under 1,57,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-19,All people,Under 1,43,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-26,All people,Under 1,37,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-03,All people,Under 1,57,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-10,All people,Under 1,48,2026,False,2026_weeklydeathsweek282026.xlsx
+2026-01-02,All people,Under 1,37,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-09,All people,Under 1,58,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-16,All people,Under 1,55,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-23,All people,Under 1,45,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-30,All people,Under 1,58,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-06,All people,Under 1,43,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-13,All people,Under 1,45,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-20,All people,Under 1,53,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-27,All people,Under 1,36,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-06,All people,Under 1,42,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-13,All people,Under 1,54,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-20,All people,Under 1,44,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-27,All people,Under 1,56,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-03,All people,Under 1,42,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-10,All people,Under 1,45,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-17,All people,Under 1,58,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-24,All people,Under 1,45,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-01,All people,Under 1,64,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-08,All people,Under 1,36,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-15,All people,Under 1,54,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-22,All people,Under 1,46,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-29,All people,Under 1,41,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-05,All people,Under 1,51,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-12,All people,Under 1,56,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-19,All people,Under 1,43,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-26,All people,Under 1,37,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-03,All people,Under 1,56,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-10,All people,Under 1,48,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-17,All people,Under 1,48,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-24,All people,Under 1,49,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-31,All people,Under 1,60,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-08-07,All people,Under 1,49,2026,False,2026_weeklydeathsweek322026.xlsx
 2010-01-08,Female,1-14,15,2010,False,2010_publishedweek2010.xls
 2010-01-15,Female,1-14,12,2010,False,2010_publishedweek2010.xls
 2010-01-22,Female,1-14,9,2010,False,2010_publishedweek2010.xls
@@ -6867,34 +6895,38 @@ week_ending,sex,age_band,observed_deaths,edition_year,is_final,source_filename
 2025-12-12,Female,1-14,13,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-19,Female,1-14,5,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-26,Female,1-14,4,2025,False,2025_weeklydeathsweek522025.xlsx
-2026-01-02,Female,1-14,5,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-09,Female,1-14,10,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-16,Female,1-14,3,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-23,Female,1-14,9,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-30,Female,1-14,11,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-06,Female,1-14,7,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-13,Female,1-14,8,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-20,Female,1-14,9,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-27,Female,1-14,9,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-06,Female,1-14,9,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-13,Female,1-14,8,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-20,Female,1-14,2,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-27,Female,1-14,9,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-03,Female,1-14,6,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-10,Female,1-14,9,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-17,Female,1-14,5,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-24,Female,1-14,8,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-01,Female,1-14,11,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-08,Female,1-14,9,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-15,Female,1-14,2,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-22,Female,1-14,9,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-29,Female,1-14,7,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-05,Female,1-14,4,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-12,Female,1-14,11,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-19,Female,1-14,10,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-26,Female,1-14,9,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-03,Female,1-14,5,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-10,Female,1-14,9,2026,False,2026_weeklydeathsweek282026.xlsx
+2026-01-02,Female,1-14,5,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-09,Female,1-14,10,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-16,Female,1-14,3,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-23,Female,1-14,9,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-30,Female,1-14,11,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-06,Female,1-14,7,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-13,Female,1-14,8,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-20,Female,1-14,9,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-27,Female,1-14,9,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-06,Female,1-14,9,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-13,Female,1-14,8,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-20,Female,1-14,2,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-27,Female,1-14,9,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-03,Female,1-14,6,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-10,Female,1-14,9,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-17,Female,1-14,5,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-24,Female,1-14,8,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-01,Female,1-14,11,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-08,Female,1-14,9,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-15,Female,1-14,2,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-22,Female,1-14,9,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-29,Female,1-14,7,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-05,Female,1-14,4,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-12,Female,1-14,11,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-19,Female,1-14,10,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-26,Female,1-14,9,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-03,Female,1-14,6,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-10,Female,1-14,9,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-17,Female,1-14,4,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-24,Female,1-14,11,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-31,Female,1-14,5,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-08-07,Female,1-14,11,2026,False,2026_weeklydeathsweek322026.xlsx
 2010-01-08,Female,15-44,115,2010,False,2010_publishedweek2010.xls
 2010-01-15,Female,15-44,117,2010,False,2010_publishedweek2010.xls
 2010-01-22,Female,15-44,128,2010,False,2010_publishedweek2010.xls
@@ -7729,34 +7761,38 @@ week_ending,sex,age_band,observed_deaths,edition_year,is_final,source_filename
 2025-12-12,Female,15-44,109,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-19,Female,15-44,105,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-26,Female,15-44,66,2025,False,2025_weeklydeathsweek522025.xlsx
-2026-01-02,Female,15-44,79,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-09,Female,15-44,131,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-16,Female,15-44,96,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-23,Female,15-44,117,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-30,Female,15-44,141,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-06,Female,15-44,113,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-13,Female,15-44,89,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-20,Female,15-44,115,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-27,Female,15-44,96,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-06,Female,15-44,132,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-13,Female,15-44,109,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-20,Female,15-44,108,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-27,Female,15-44,140,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-03,Female,15-44,95,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-10,Female,15-44,97,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-17,Female,15-44,109,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-24,Female,15-44,125,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-01,Female,15-44,118,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-08,Female,15-44,97,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-15,Female,15-44,111,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-22,Female,15-44,95,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-29,Female,15-44,76,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-05,Female,15-44,101,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-12,Female,15-44,115,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-19,Female,15-44,97,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-26,Female,15-44,103,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-03,Female,15-44,103,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-10,Female,15-44,108,2026,False,2026_weeklydeathsweek282026.xlsx
+2026-01-02,Female,15-44,79,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-09,Female,15-44,131,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-16,Female,15-44,96,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-23,Female,15-44,117,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-30,Female,15-44,141,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-06,Female,15-44,113,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-13,Female,15-44,89,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-20,Female,15-44,115,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-27,Female,15-44,96,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-06,Female,15-44,132,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-13,Female,15-44,109,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-20,Female,15-44,108,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-27,Female,15-44,140,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-03,Female,15-44,95,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-10,Female,15-44,97,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-17,Female,15-44,109,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-24,Female,15-44,125,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-01,Female,15-44,118,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-08,Female,15-44,97,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-15,Female,15-44,111,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-22,Female,15-44,94,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-29,Female,15-44,76,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-05,Female,15-44,102,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-12,Female,15-44,115,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-19,Female,15-44,97,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-26,Female,15-44,103,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-03,Female,15-44,104,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-10,Female,15-44,108,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-17,Female,15-44,86,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-24,Female,15-44,93,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-31,Female,15-44,107,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-08-07,Female,15-44,97,2026,False,2026_weeklydeathsweek322026.xlsx
 2010-01-08,Female,45-64,676,2010,False,2010_publishedweek2010.xls
 2010-01-15,Female,45-64,570,2010,False,2010_publishedweek2010.xls
 2010-01-22,Female,45-64,566,2010,False,2010_publishedweek2010.xls
@@ -8591,34 +8627,38 @@ week_ending,sex,age_band,observed_deaths,edition_year,is_final,source_filename
 2025-12-12,Female,45-64,555,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-19,Female,45-64,571,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-26,Female,45-64,334,2025,False,2025_weeklydeathsweek522025.xlsx
-2026-01-02,Female,45-64,442,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-09,Female,45-64,645,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-16,Female,45-64,598,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-23,Female,45-64,636,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-30,Female,45-64,566,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-06,Female,45-64,539,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-13,Female,45-64,536,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-20,Female,45-64,472,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-27,Female,45-64,517,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-06,Female,45-64,532,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-13,Female,45-64,509,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-20,Female,45-64,515,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-27,Female,45-64,494,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-03,Female,45-64,358,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-10,Female,45-64,414,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-17,Female,45-64,513,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-24,Female,45-64,545,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-01,Female,45-64,527,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-08,Female,45-64,435,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-15,Female,45-64,510,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-22,Female,45-64,501,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-29,Female,45-64,387,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-05,Female,45-64,506,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-12,Female,45-64,547,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-19,Female,45-64,470,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-26,Female,45-64,479,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-03,Female,45-64,469,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-10,Female,45-64,497,2026,False,2026_weeklydeathsweek282026.xlsx
+2026-01-02,Female,45-64,442,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-09,Female,45-64,645,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-16,Female,45-64,598,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-23,Female,45-64,636,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-30,Female,45-64,566,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-06,Female,45-64,539,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-13,Female,45-64,536,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-20,Female,45-64,472,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-27,Female,45-64,517,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-06,Female,45-64,532,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-13,Female,45-64,509,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-20,Female,45-64,515,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-27,Female,45-64,494,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-03,Female,45-64,358,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-10,Female,45-64,414,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-17,Female,45-64,513,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-24,Female,45-64,545,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-01,Female,45-64,527,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-08,Female,45-64,435,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-15,Female,45-64,510,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-22,Female,45-64,501,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-29,Female,45-64,387,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-05,Female,45-64,506,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-12,Female,45-64,546,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-19,Female,45-64,470,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-26,Female,45-64,479,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-03,Female,45-64,468,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-10,Female,45-64,498,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-17,Female,45-64,512,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-24,Female,45-64,488,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-31,Female,45-64,485,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-08-07,Female,45-64,494,2026,False,2026_weeklydeathsweek322026.xlsx
 2010-01-08,Female,65-74,835,2010,False,2010_publishedweek2010.xls
 2010-01-15,Female,65-74,778,2010,False,2010_publishedweek2010.xls
 2010-01-22,Female,65-74,736,2010,False,2010_publishedweek2010.xls
@@ -9453,34 +9493,38 @@ week_ending,sex,age_band,observed_deaths,edition_year,is_final,source_filename
 2025-12-12,Female,65-74,700,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-19,Female,65-74,741,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-26,Female,65-74,481,2025,False,2025_weeklydeathsweek522025.xlsx
-2026-01-02,Female,65-74,646,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-09,Female,65-74,881,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-16,Female,65-74,816,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-23,Female,65-74,790,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-30,Female,65-74,809,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-06,Female,65-74,766,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-13,Female,65-74,731,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-20,Female,65-74,706,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-27,Female,65-74,730,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-06,Female,65-74,739,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-13,Female,65-74,690,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-20,Female,65-74,684,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-27,Female,65-74,648,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-03,Female,65-74,627,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-10,Female,65-74,585,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-17,Female,65-74,728,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-24,Female,65-74,717,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-01,Female,65-74,714,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-08,Female,65-74,592,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-15,Female,65-74,673,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-22,Female,65-74,689,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-29,Female,65-74,564,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-05,Female,65-74,759,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-12,Female,65-74,726,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-19,Female,65-74,665,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-26,Female,65-74,602,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-03,Female,65-74,632,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-10,Female,65-74,705,2026,False,2026_weeklydeathsweek282026.xlsx
+2026-01-02,Female,65-74,646,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-09,Female,65-74,881,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-16,Female,65-74,816,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-23,Female,65-74,790,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-30,Female,65-74,809,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-06,Female,65-74,766,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-13,Female,65-74,731,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-20,Female,65-74,706,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-27,Female,65-74,730,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-06,Female,65-74,739,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-13,Female,65-74,690,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-20,Female,65-74,684,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-27,Female,65-74,648,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-03,Female,65-74,627,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-10,Female,65-74,585,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-17,Female,65-74,728,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-24,Female,65-74,717,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-01,Female,65-74,714,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-08,Female,65-74,592,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-15,Female,65-74,673,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-22,Female,65-74,689,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-29,Female,65-74,564,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-05,Female,65-74,759,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-12,Female,65-74,726,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-19,Female,65-74,665,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-26,Female,65-74,602,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-03,Female,65-74,632,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-10,Female,65-74,706,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-17,Female,65-74,686,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-24,Female,65-74,639,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-31,Female,65-74,665,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-08-07,Female,65-74,628,2026,False,2026_weeklydeathsweek322026.xlsx
 2010-01-08,Female,75-84,1948,2010,False,2010_publishedweek2010.xls
 2010-01-15,Female,75-84,1958,2010,False,2010_publishedweek2010.xls
 2010-01-22,Female,75-84,1746,2010,False,2010_publishedweek2010.xls
@@ -10315,34 +10359,38 @@ week_ending,sex,age_band,observed_deaths,edition_year,is_final,source_filename
 2025-12-12,Female,75-84,1575,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-19,Female,75-84,1738,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-26,Female,75-84,1094,2025,False,2025_weeklydeathsweek522025.xlsx
-2026-01-02,Female,75-84,1378,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-09,Female,75-84,2004,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-16,Female,75-84,1957,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-23,Female,75-84,1986,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-30,Female,75-84,1835,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-06,Female,75-84,1798,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-13,Female,75-84,1709,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-20,Female,75-84,1592,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-27,Female,75-84,1597,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-06,Female,75-84,1655,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-13,Female,75-84,1581,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-20,Female,75-84,1593,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-27,Female,75-84,1472,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-03,Female,75-84,1282,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-10,Female,75-84,1286,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-17,Female,75-84,1717,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-24,Female,75-84,1623,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-01,Female,75-84,1582,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-08,Female,75-84,1259,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-15,Female,75-84,1568,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-22,Female,75-84,1540,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-29,Female,75-84,1217,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-05,Female,75-84,1614,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-12,Female,75-84,1542,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-19,Female,75-84,1463,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-26,Female,75-84,1308,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-03,Female,75-84,1375,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-10,Female,75-84,1482,2026,False,2026_weeklydeathsweek282026.xlsx
+2026-01-02,Female,75-84,1378,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-09,Female,75-84,2004,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-16,Female,75-84,1957,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-23,Female,75-84,1986,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-30,Female,75-84,1835,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-06,Female,75-84,1798,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-13,Female,75-84,1708,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-20,Female,75-84,1592,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-27,Female,75-84,1597,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-06,Female,75-84,1655,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-13,Female,75-84,1581,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-20,Female,75-84,1593,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-27,Female,75-84,1472,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-03,Female,75-84,1282,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-10,Female,75-84,1286,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-17,Female,75-84,1717,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-24,Female,75-84,1623,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-01,Female,75-84,1582,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-08,Female,75-84,1259,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-15,Female,75-84,1568,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-22,Female,75-84,1540,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-29,Female,75-84,1217,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-05,Female,75-84,1614,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-12,Female,75-84,1543,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-19,Female,75-84,1463,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-26,Female,75-84,1309,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-03,Female,75-84,1375,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-10,Female,75-84,1482,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-17,Female,75-84,1493,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-24,Female,75-84,1381,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-31,Female,75-84,1332,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-08-07,Female,75-84,1297,2026,False,2026_weeklydeathsweek322026.xlsx
 2010-01-08,Female,85+,3329,2010,False,2010_publishedweek2010.xls
 2010-01-15,Female,85+,3183,2010,False,2010_publishedweek2010.xls
 2010-01-22,Female,85+,3045,2010,False,2010_publishedweek2010.xls
@@ -11177,34 +11225,38 @@ week_ending,sex,age_band,observed_deaths,edition_year,is_final,source_filename
 2025-12-12,Female,85+,1134,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-19,Female,85+,1179,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-26,Female,85+,722,2025,False,2025_weeklydeathsweek522025.xlsx
-2026-01-02,Female,85+,982,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-09,Female,85+,1353,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-16,Female,85+,1336,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-23,Female,85+,1363,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-30,Female,85+,1275,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-06,Female,85+,1153,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-13,Female,85+,1177,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-20,Female,85+,1132,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-27,Female,85+,1131,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-06,Female,85+,1004,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-13,Female,85+,1075,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-20,Female,85+,1014,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-27,Female,85+,935,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-03,Female,85+,814,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-10,Female,85+,819,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-17,Female,85+,1127,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-24,Female,85+,1082,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-01,Female,85+,1047,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-08,Female,85+,805,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-15,Female,85+,974,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-22,Female,85+,1000,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-29,Female,85+,830,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-05,Female,85+,1097,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-12,Female,85+,1027,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-19,Female,85+,917,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-26,Female,85+,879,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-03,Female,85+,960,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-10,Female,85+,1022,2026,False,2026_weeklydeathsweek282026.xlsx
+2026-01-02,Female,85+,982,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-09,Female,85+,1353,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-16,Female,85+,1336,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-23,Female,85+,1363,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-30,Female,85+,1275,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-06,Female,85+,1153,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-13,Female,85+,1177,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-20,Female,85+,1132,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-27,Female,85+,1131,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-06,Female,85+,1004,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-13,Female,85+,1075,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-20,Female,85+,1014,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-27,Female,85+,935,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-03,Female,85+,814,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-10,Female,85+,819,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-17,Female,85+,1127,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-24,Female,85+,1082,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-01,Female,85+,1047,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-08,Female,85+,805,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-15,Female,85+,974,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-22,Female,85+,1000,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-29,Female,85+,830,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-05,Female,85+,1097,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-12,Female,85+,1027,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-19,Female,85+,917,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-26,Female,85+,879,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-03,Female,85+,961,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-10,Female,85+,1022,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-17,Female,85+,995,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-24,Female,85+,908,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-31,Female,85+,917,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-08-07,Female,85+,891,2026,False,2026_weeklydeathsweek322026.xlsx
 2010-01-08,Female,Under 1,36,2010,False,2010_publishedweek2010.xls
 2010-01-15,Female,Under 1,29,2010,False,2010_publishedweek2010.xls
 2010-01-22,Female,Under 1,31,2010,False,2010_publishedweek2010.xls
@@ -12039,34 +12091,38 @@ week_ending,sex,age_band,observed_deaths,edition_year,is_final,source_filename
 2025-12-12,Female,Under 1,23,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-19,Female,Under 1,20,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-26,Female,Under 1,18,2025,False,2025_weeklydeathsweek522025.xlsx
-2026-01-02,Female,Under 1,18,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-09,Female,Under 1,24,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-16,Female,Under 1,25,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-23,Female,Under 1,25,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-30,Female,Under 1,22,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-06,Female,Under 1,20,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-13,Female,Under 1,25,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-20,Female,Under 1,28,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-27,Female,Under 1,20,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-06,Female,Under 1,11,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-13,Female,Under 1,25,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-20,Female,Under 1,18,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-27,Female,Under 1,24,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-03,Female,Under 1,12,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-10,Female,Under 1,17,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-17,Female,Under 1,24,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-24,Female,Under 1,20,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-01,Female,Under 1,33,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-08,Female,Under 1,20,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-15,Female,Under 1,21,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-22,Female,Under 1,18,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-29,Female,Under 1,20,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-05,Female,Under 1,16,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-12,Female,Under 1,21,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-19,Female,Under 1,22,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-26,Female,Under 1,19,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-03,Female,Under 1,27,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-10,Female,Under 1,26,2026,False,2026_weeklydeathsweek282026.xlsx
+2026-01-02,Female,Under 1,18,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-09,Female,Under 1,24,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-16,Female,Under 1,25,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-23,Female,Under 1,25,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-30,Female,Under 1,22,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-06,Female,Under 1,20,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-13,Female,Under 1,25,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-20,Female,Under 1,28,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-27,Female,Under 1,20,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-06,Female,Under 1,11,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-13,Female,Under 1,25,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-20,Female,Under 1,18,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-27,Female,Under 1,24,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-03,Female,Under 1,12,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-10,Female,Under 1,17,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-17,Female,Under 1,24,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-24,Female,Under 1,20,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-01,Female,Under 1,33,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-08,Female,Under 1,20,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-15,Female,Under 1,21,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-22,Female,Under 1,18,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-29,Female,Under 1,20,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-05,Female,Under 1,16,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-12,Female,Under 1,20,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-19,Female,Under 1,22,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-26,Female,Under 1,19,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-03,Female,Under 1,26,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-10,Female,Under 1,26,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-17,Female,Under 1,23,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-24,Female,Under 1,21,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-31,Female,Under 1,22,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-08-07,Female,Under 1,21,2026,False,2026_weeklydeathsweek322026.xlsx
 2010-01-08,Male,1-14,9,2010,False,2010_publishedweek2010.xls
 2010-01-15,Male,1-14,17,2010,False,2010_publishedweek2010.xls
 2010-01-22,Male,1-14,9,2010,False,2010_publishedweek2010.xls
@@ -12901,34 +12957,38 @@ week_ending,sex,age_band,observed_deaths,edition_year,is_final,source_filename
 2025-12-12,Male,1-14,8,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-19,Male,1-14,11,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-26,Male,1-14,7,2025,False,2025_weeklydeathsweek522025.xlsx
-2026-01-02,Male,1-14,8,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-09,Male,1-14,10,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-16,Male,1-14,11,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-23,Male,1-14,17,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-30,Male,1-14,6,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-06,Male,1-14,7,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-13,Male,1-14,12,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-20,Male,1-14,8,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-27,Male,1-14,12,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-06,Male,1-14,11,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-13,Male,1-14,11,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-20,Male,1-14,10,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-27,Male,1-14,9,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-03,Male,1-14,8,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-10,Male,1-14,8,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-17,Male,1-14,6,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-24,Male,1-14,12,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-01,Male,1-14,13,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-08,Male,1-14,9,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-15,Male,1-14,8,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-22,Male,1-14,14,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-29,Male,1-14,7,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-05,Male,1-14,12,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-12,Male,1-14,10,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-19,Male,1-14,9,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-26,Male,1-14,15,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-03,Male,1-14,12,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-10,Male,1-14,10,2026,False,2026_weeklydeathsweek282026.xlsx
+2026-01-02,Male,1-14,8,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-09,Male,1-14,10,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-16,Male,1-14,11,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-23,Male,1-14,17,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-30,Male,1-14,6,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-06,Male,1-14,7,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-13,Male,1-14,12,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-20,Male,1-14,8,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-27,Male,1-14,12,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-06,Male,1-14,11,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-13,Male,1-14,11,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-20,Male,1-14,10,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-27,Male,1-14,9,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-03,Male,1-14,8,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-10,Male,1-14,8,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-17,Male,1-14,6,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-24,Male,1-14,12,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-01,Male,1-14,13,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-08,Male,1-14,9,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-15,Male,1-14,8,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-22,Male,1-14,14,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-29,Male,1-14,7,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-05,Male,1-14,12,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-12,Male,1-14,10,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-19,Male,1-14,9,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-26,Male,1-14,15,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-03,Male,1-14,12,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-10,Male,1-14,10,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-17,Male,1-14,5,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-24,Male,1-14,8,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-31,Male,1-14,8,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-08-07,Male,1-14,7,2026,False,2026_weeklydeathsweek322026.xlsx
 2010-01-08,Male,15-44,184,2010,False,2010_publishedweek2010.xls
 2010-01-15,Male,15-44,214,2010,False,2010_publishedweek2010.xls
 2010-01-22,Male,15-44,219,2010,False,2010_publishedweek2010.xls
@@ -13763,34 +13823,38 @@ week_ending,sex,age_band,observed_deaths,edition_year,is_final,source_filename
 2025-12-12,Male,15-44,233,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-19,Male,15-44,227,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-26,Male,15-44,93,2025,False,2025_weeklydeathsweek522025.xlsx
-2026-01-02,Male,15-44,98,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-09,Male,15-44,168,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-16,Male,15-44,199,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-23,Male,15-44,216,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-30,Male,15-44,174,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-06,Male,15-44,217,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-13,Male,15-44,222,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-20,Male,15-44,210,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-27,Male,15-44,199,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-06,Male,15-44,187,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-13,Male,15-44,202,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-20,Male,15-44,198,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-27,Male,15-44,205,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-03,Male,15-44,169,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-10,Male,15-44,154,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-17,Male,15-44,210,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-24,Male,15-44,210,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-01,Male,15-44,215,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-08,Male,15-44,179,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-15,Male,15-44,221,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-22,Male,15-44,170,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-29,Male,15-44,149,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-05,Male,15-44,191,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-12,Male,15-44,198,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-19,Male,15-44,207,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-26,Male,15-44,163,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-03,Male,15-44,172,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-10,Male,15-44,187,2026,False,2026_weeklydeathsweek282026.xlsx
+2026-01-02,Male,15-44,98,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-09,Male,15-44,168,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-16,Male,15-44,199,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-23,Male,15-44,216,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-30,Male,15-44,174,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-06,Male,15-44,217,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-13,Male,15-44,222,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-20,Male,15-44,210,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-27,Male,15-44,199,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-06,Male,15-44,187,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-13,Male,15-44,202,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-20,Male,15-44,198,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-27,Male,15-44,205,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-03,Male,15-44,169,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-10,Male,15-44,154,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-17,Male,15-44,210,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-24,Male,15-44,210,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-01,Male,15-44,215,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-08,Male,15-44,179,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-15,Male,15-44,221,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-22,Male,15-44,170,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-29,Male,15-44,149,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-05,Male,15-44,191,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-12,Male,15-44,198,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-19,Male,15-44,207,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-26,Male,15-44,163,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-03,Male,15-44,172,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-10,Male,15-44,188,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-17,Male,15-44,184,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-24,Male,15-44,199,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-31,Male,15-44,213,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-08-07,Male,15-44,202,2026,False,2026_weeklydeathsweek322026.xlsx
 2010-01-08,Male,45-64,894,2010,False,2010_publishedweek2010.xls
 2010-01-15,Male,45-64,895,2010,False,2010_publishedweek2010.xls
 2010-01-22,Male,45-64,826,2010,False,2010_publishedweek2010.xls
@@ -14625,34 +14689,38 @@ week_ending,sex,age_band,observed_deaths,edition_year,is_final,source_filename
 2025-12-12,Male,45-64,772,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-19,Male,45-64,830,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-26,Male,45-64,475,2025,False,2025_weeklydeathsweek522025.xlsx
-2026-01-02,Male,45-64,616,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-09,Male,45-64,903,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-16,Male,45-64,977,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-23,Male,45-64,854,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-30,Male,45-64,932,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-06,Male,45-64,844,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-13,Male,45-64,849,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-20,Male,45-64,816,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-27,Male,45-64,782,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-06,Male,45-64,795,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-13,Male,45-64,839,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-20,Male,45-64,810,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-27,Male,45-64,759,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-03,Male,45-64,619,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-10,Male,45-64,650,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-17,Male,45-64,819,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-24,Male,45-64,860,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-01,Male,45-64,889,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-08,Male,45-64,628,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-15,Male,45-64,813,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-22,Male,45-64,792,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-29,Male,45-64,638,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-05,Male,45-64,818,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-12,Male,45-64,860,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-19,Male,45-64,837,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-26,Male,45-64,655,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-03,Male,45-64,690,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-10,Male,45-64,752,2026,False,2026_weeklydeathsweek282026.xlsx
+2026-01-02,Male,45-64,616,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-09,Male,45-64,903,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-16,Male,45-64,977,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-23,Male,45-64,854,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-30,Male,45-64,932,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-06,Male,45-64,844,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-13,Male,45-64,849,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-20,Male,45-64,816,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-27,Male,45-64,782,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-06,Male,45-64,795,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-13,Male,45-64,839,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-20,Male,45-64,810,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-27,Male,45-64,759,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-03,Male,45-64,619,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-10,Male,45-64,650,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-17,Male,45-64,819,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-24,Male,45-64,860,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-01,Male,45-64,889,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-08,Male,45-64,628,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-15,Male,45-64,813,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-22,Male,45-64,792,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-29,Male,45-64,638,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-05,Male,45-64,818,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-12,Male,45-64,860,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-19,Male,45-64,838,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-26,Male,45-64,655,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-03,Male,45-64,690,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-10,Male,45-64,753,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-17,Male,45-64,777,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-24,Male,45-64,768,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-31,Male,45-64,769,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-08-07,Male,45-64,734,2026,False,2026_weeklydeathsweek322026.xlsx
 2010-01-08,Male,65-74,1214,2010,False,2010_publishedweek2010.xls
 2010-01-15,Male,65-74,1082,2010,False,2010_publishedweek2010.xls
 2010-01-22,Male,65-74,1045,2010,False,2010_publishedweek2010.xls
@@ -15487,34 +15555,38 @@ week_ending,sex,age_band,observed_deaths,edition_year,is_final,source_filename
 2025-12-12,Male,65-74,1007,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-19,Male,65-74,1014,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-26,Male,65-74,588,2025,False,2025_weeklydeathsweek522025.xlsx
-2026-01-02,Male,65-74,792,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-09,Male,65-74,1094,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-16,Male,65-74,1212,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-23,Male,65-74,1112,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-30,Male,65-74,1092,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-06,Male,65-74,1078,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-13,Male,65-74,1050,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-20,Male,65-74,971,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-27,Male,65-74,980,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-06,Male,65-74,985,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-13,Male,65-74,967,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-20,Male,65-74,940,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-27,Male,65-74,949,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-03,Male,65-74,849,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-10,Male,65-74,803,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-17,Male,65-74,1008,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-24,Male,65-74,1021,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-01,Male,65-74,981,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-08,Male,65-74,786,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-15,Male,65-74,999,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-22,Male,65-74,983,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-29,Male,65-74,748,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-05,Male,65-74,998,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-12,Male,65-74,991,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-19,Male,65-74,945,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-26,Male,65-74,888,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-03,Male,65-74,879,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-10,Male,65-74,923,2026,False,2026_weeklydeathsweek282026.xlsx
+2026-01-02,Male,65-74,792,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-09,Male,65-74,1094,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-16,Male,65-74,1212,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-23,Male,65-74,1112,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-30,Male,65-74,1092,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-06,Male,65-74,1078,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-13,Male,65-74,1050,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-20,Male,65-74,971,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-27,Male,65-74,980,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-06,Male,65-74,985,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-13,Male,65-74,967,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-20,Male,65-74,940,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-27,Male,65-74,949,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-03,Male,65-74,849,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-10,Male,65-74,803,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-17,Male,65-74,1008,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-24,Male,65-74,1021,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-01,Male,65-74,981,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-08,Male,65-74,786,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-15,Male,65-74,999,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-22,Male,65-74,983,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-29,Male,65-74,748,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-05,Male,65-74,998,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-12,Male,65-74,991,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-19,Male,65-74,945,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-26,Male,65-74,887,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-03,Male,65-74,879,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-10,Male,65-74,922,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-17,Male,65-74,910,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-24,Male,65-74,920,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-31,Male,65-74,844,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-08-07,Male,65-74,888,2026,False,2026_weeklydeathsweek322026.xlsx
 2010-01-08,Male,75-84,2004,2010,False,2010_publishedweek2010.xls
 2010-01-15,Male,75-84,1925,2010,False,2010_publishedweek2010.xls
 2010-01-22,Male,75-84,1755,2010,False,2010_publishedweek2010.xls
@@ -16349,34 +16421,38 @@ week_ending,sex,age_band,observed_deaths,edition_year,is_final,source_filename
 2025-12-12,Male,75-84,1873,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-19,Male,75-84,1968,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-26,Male,75-84,1222,2025,False,2025_weeklydeathsweek522025.xlsx
-2026-01-02,Male,75-84,1592,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-09,Male,75-84,2237,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-16,Male,75-84,2399,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-23,Male,75-84,2168,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-30,Male,75-84,2101,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-06,Male,75-84,1962,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-13,Male,75-84,1969,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-20,Male,75-84,1880,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-27,Male,75-84,1860,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-06,Male,75-84,1785,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-13,Male,75-84,1838,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-20,Male,75-84,1750,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-27,Male,75-84,1747,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-03,Male,75-84,1505,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-10,Male,75-84,1538,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-17,Male,75-84,1931,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-24,Male,75-84,1920,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-01,Male,75-84,1923,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-08,Male,75-84,1400,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-15,Male,75-84,1793,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-22,Male,75-84,1814,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-29,Male,75-84,1403,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-05,Male,75-84,1862,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-12,Male,75-84,1825,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-19,Male,75-84,1720,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-26,Male,75-84,1660,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-03,Male,75-84,1630,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-10,Male,75-84,1822,2026,False,2026_weeklydeathsweek282026.xlsx
+2026-01-02,Male,75-84,1592,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-09,Male,75-84,2237,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-16,Male,75-84,2399,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-23,Male,75-84,2168,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-30,Male,75-84,2101,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-06,Male,75-84,1962,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-13,Male,75-84,1969,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-20,Male,75-84,1880,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-27,Male,75-84,1860,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-06,Male,75-84,1785,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-13,Male,75-84,1838,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-20,Male,75-84,1750,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-27,Male,75-84,1747,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-03,Male,75-84,1505,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-10,Male,75-84,1538,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-17,Male,75-84,1931,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-24,Male,75-84,1920,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-01,Male,75-84,1923,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-08,Male,75-84,1400,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-15,Male,75-84,1793,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-22,Male,75-84,1814,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-29,Male,75-84,1403,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-05,Male,75-84,1862,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-12,Male,75-84,1825,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-19,Male,75-84,1718,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-26,Male,75-84,1660,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-03,Male,75-84,1630,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-10,Male,75-84,1824,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-17,Male,75-84,1730,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-24,Male,75-84,1690,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-31,Male,75-84,1590,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-08-07,Male,75-84,1629,2026,False,2026_weeklydeathsweek322026.xlsx
 2010-01-08,Male,85+,1683,2010,False,2010_publishedweek2010.xls
 2010-01-15,Male,85+,1719,2010,False,2010_publishedweek2010.xls
 2010-01-22,Male,85+,1609,2010,False,2010_publishedweek2010.xls
@@ -17211,34 +17287,38 @@ week_ending,sex,age_band,observed_deaths,edition_year,is_final,source_filename
 2025-12-12,Male,85+,1006,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-19,Male,85+,1050,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-26,Male,85+,661,2025,False,2025_weeklydeathsweek522025.xlsx
-2026-01-02,Male,85+,877,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-09,Male,85+,1271,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-16,Male,85+,1259,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-23,Male,85+,1150,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-30,Male,85+,1131,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-06,Male,85+,1078,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-13,Male,85+,1037,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-20,Male,85+,1001,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-27,Male,85+,1010,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-06,Male,85+,994,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-13,Male,85+,985,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-20,Male,85+,932,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-27,Male,85+,870,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-03,Male,85+,818,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-10,Male,85+,738,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-17,Male,85+,1066,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-24,Male,85+,1014,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-01,Male,85+,968,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-08,Male,85+,784,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-15,Male,85+,923,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-22,Male,85+,912,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-29,Male,85+,707,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-05,Male,85+,911,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-12,Male,85+,965,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-19,Male,85+,826,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-26,Male,85+,846,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-03,Male,85+,865,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-10,Male,85+,887,2026,False,2026_weeklydeathsweek282026.xlsx
+2026-01-02,Male,85+,877,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-09,Male,85+,1271,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-16,Male,85+,1259,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-23,Male,85+,1150,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-30,Male,85+,1131,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-06,Male,85+,1078,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-13,Male,85+,1037,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-20,Male,85+,1001,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-27,Male,85+,1010,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-06,Male,85+,994,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-13,Male,85+,985,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-20,Male,85+,932,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-27,Male,85+,870,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-03,Male,85+,818,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-10,Male,85+,738,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-17,Male,85+,1066,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-24,Male,85+,1014,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-01,Male,85+,968,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-08,Male,85+,784,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-15,Male,85+,923,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-22,Male,85+,912,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-29,Male,85+,707,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-05,Male,85+,911,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-12,Male,85+,965,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-19,Male,85+,826,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-26,Male,85+,846,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-03,Male,85+,865,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-10,Male,85+,887,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-17,Male,85+,818,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-24,Male,85+,875,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-31,Male,85+,808,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-08-07,Male,85+,827,2026,False,2026_weeklydeathsweek322026.xlsx
 2010-01-08,Male,Under 1,25,2010,False,2010_publishedweek2010.xls
 2010-01-15,Male,Under 1,40,2010,False,2010_publishedweek2010.xls
 2010-01-22,Male,Under 1,35,2010,False,2010_publishedweek2010.xls
@@ -18073,31 +18153,35 @@ week_ending,sex,age_band,observed_deaths,edition_year,is_final,source_filename
 2025-12-12,Male,Under 1,22,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-19,Male,Under 1,32,2025,False,2025_weeklydeathsweek522025.xlsx
 2025-12-26,Male,Under 1,14,2025,False,2025_weeklydeathsweek522025.xlsx
-2026-01-02,Male,Under 1,19,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-09,Male,Under 1,34,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-16,Male,Under 1,30,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-23,Male,Under 1,20,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-01-30,Male,Under 1,36,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-06,Male,Under 1,23,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-13,Male,Under 1,20,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-20,Male,Under 1,25,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-02-27,Male,Under 1,16,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-06,Male,Under 1,31,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-13,Male,Under 1,29,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-20,Male,Under 1,26,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-03-27,Male,Under 1,32,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-03,Male,Under 1,30,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-10,Male,Under 1,28,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-17,Male,Under 1,34,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-04-24,Male,Under 1,25,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-01,Male,Under 1,31,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-08,Male,Under 1,16,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-15,Male,Under 1,33,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-22,Male,Under 1,28,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-05-29,Male,Under 1,21,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-05,Male,Under 1,35,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-12,Male,Under 1,36,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-19,Male,Under 1,21,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-06-26,Male,Under 1,18,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-03,Male,Under 1,30,2026,False,2026_weeklydeathsweek282026.xlsx
-2026-07-10,Male,Under 1,22,2026,False,2026_weeklydeathsweek282026.xlsx
+2026-01-02,Male,Under 1,19,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-09,Male,Under 1,34,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-16,Male,Under 1,30,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-23,Male,Under 1,20,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-01-30,Male,Under 1,36,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-06,Male,Under 1,23,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-13,Male,Under 1,20,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-20,Male,Under 1,25,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-02-27,Male,Under 1,16,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-06,Male,Under 1,31,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-13,Male,Under 1,29,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-20,Male,Under 1,26,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-03-27,Male,Under 1,32,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-03,Male,Under 1,30,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-10,Male,Under 1,28,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-17,Male,Under 1,34,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-04-24,Male,Under 1,25,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-01,Male,Under 1,31,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-08,Male,Under 1,16,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-15,Male,Under 1,33,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-22,Male,Under 1,28,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-05-29,Male,Under 1,21,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-05,Male,Under 1,35,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-12,Male,Under 1,36,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-19,Male,Under 1,21,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-06-26,Male,Under 1,18,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-03,Male,Under 1,30,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-10,Male,Under 1,22,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-17,Male,Under 1,25,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-24,Male,Under 1,28,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-07-31,Male,Under 1,38,2026,False,2026_weeklydeathsweek322026.xlsx
+2026-08-07,Male,Under 1,28,2026,False,2026_weeklydeathsweek322026.xlsx
