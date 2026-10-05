@@ -13,7 +13,7 @@ beautifulsoup4 = "^4.12.3"
 # >=46 closes 4 CVEs flagged in 42.x (DNS-name constraint, OpenSSL bundled
 # wheels, subgroup-validation). Permitting 47.x keeps Dependabot quiet on
 # its next bump cycle.
-cryptography = ">=46.0.0,<48.0.0"
+cryptography = ">=46.0.0,<51.0.0"
 matplotlib = "^3.8.0"
 numpy = "^1.26.0"
 openpyxl = "^3.1.5"
